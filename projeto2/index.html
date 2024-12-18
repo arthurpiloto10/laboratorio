@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,7 +19,7 @@
 
         body {
             padding: 15px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         .dados-pessoais {
@@ -31,19 +36,53 @@
             border-left-width: 2px;
             padding-left: 15px;
         }
+
         td {
             border-color: rgba(0, 0, 0, 0.5);
             border-style: solid;
             border-width: 1px;
             padding: 10px;
         }
+
         table {
             border-collapse: collapse;
             margin-top: 30px;
             width: 100%;
         }
+
         img {
             border-radius: 50%;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        ul {
+            padding-left: 37px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+        }
+
+        h5 {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        ul li:not(:last-child) {
+            margin-bottom: 5px;
+        }
+
+        p {
+            line-height: 25px;
         }
     </style>
 </head>
@@ -72,39 +111,53 @@
         <h2>
             Sobre Mim
         </h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed fuga aliquid veritatis molestiae
-        praesentium, doloribus dolore cum expedita, placeat aliquam dolor tempora. Eligendi, fuga necessitatibus quia
-        quidem
-        quibusdam sequi.
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed fuga aliquid veritatis molestiae
+            praesentium, doloribus dolore cum expedita, placeat aliquam dolor tempora. Eligendi, fuga necessitatibus
+            quia
+            quidem
+            quibusdam sequi.
+        </p>
     </div>
     <div>
         <h2>
             Experiência Profissional
         </h2>
-        Amêndola e Amêndola
-        <br>
-        Helpdesk
-        <br>
-        12/06/2024 - 04/12/2024
-        <br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In dignissimos culpa laudantium necessitatibus odit
-        nesciunt impedit, officiis quasi exercitationem a sit architecto error illo et, consectetur modi ex. Tempore,
-        aut.
+        <h3>
+            Amêndola e Amêndola
+        </h3>
+        <h4>
+            Helpdesk
+        </h4>
+        <h5>
+            12/06/2024 - 04/12/2024
+        </h5>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In dignissimos culpa laudantium necessitatibus odit
+            nesciunt impedit, officiis quasi exercitationem a sit architecto error illo et, consectetur modi ex.
+            Tempore,
+            aut.
+        </p>
     </div>
     <div>
         <h2>
             Educação e Formação
         </h2>
-        Melhores DEVs
-        <br>
-        Introdução a análise e desenvolvimento de sistemas
-        <br>
-        04/06/2024 - 31/12/2024
-        <br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, modi aut. Dignissimos, voluptates impedit.
-        Dolorem
-        nihil facere consectetur maxime nemo numquam reiciendis, nulla est quod quibusdam! Non, eos? Voluptates,
-        dolorem.
+        <h3>
+            Melhores DEVs
+        </h3>
+        <h4>
+            Introdução a análise e desenvolvimento de sistemas
+        </h4>
+        <h5>
+            04/06/2024 - 31/12/2024
+        </h5>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, modi aut. Dignissimos, voluptates impedit.
+            Dolorem
+            nihil facere consectetur maxime nemo numquam reiciendis, nulla est quod quibusdam! Non, eos? Voluptates,
+            dolorem.
+        </p>
     </div>
     <div>
         <h2>
@@ -174,13 +227,17 @@
         <h2>
             Objetivo
         </h2>
-        Contribuir com a minha experiência e qualificação.
+        <p>
+            Contribuir com a minha experiência e qualificação.
+        </p>
     </div>
     <div>
         <h2>
             Pretensão Salarial
         </h2>
-        R$3000,00
+        <p>
+            R$3000,00
+        </p>
     </div>
 </body>
 
