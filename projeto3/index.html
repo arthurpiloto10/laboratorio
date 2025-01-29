@@ -10,6 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -20,15 +23,15 @@
                 Company name
             </h1>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Serviços</a></li>
-                <li><a href="">Produtos</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
     </header>
-    <section class="hero">
+    <section class="hero scroll-mt" id="home">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
                 <h2>
@@ -57,7 +60,7 @@
             </form>
         </div>
     </section>
-    <section class="servicos">
+    <section class="servicos scroll-mt" id="servicos">
         <h2 class="text-center h2">
             Serviços
         </h2>
@@ -127,7 +130,7 @@
             </div>
         </div>
     </section>
-    <section class="sobre">
+    <section class="sobre scroll-mt" id="sobre">
         <div class="container">
             <h2 class="h2 text-white">
                 Sobre
@@ -147,45 +150,154 @@
             </p>
         </div>
     </section>
-    <section class="produtos text-center">
-        <h2 class="h2">
+    <section class="produtos scroll-mt" id="produtos">
+        <h2 class="h2 text-center">
             Produtos
         </h2>
         <div class="container d-flex column-gap-30">
-            <div>
+            <div class="card p-2">
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/Borrifador.webp" alt="Borrifador">
                 </div>
                 <h3>
                     Borrifador
                 </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>
+                        R$
+                        <span class="text-green">
+                            34,90
+                        </span>
+                    </span>
+                    <a href="" class="btn1">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
             </div>
-            <div>
+            <div class="card p-2">
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/cortador-de-grama.jpg" alt="Cortador de grama">
                 </div>
                 <h3>
                     Cortador de grama
                 </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>
+                        R$
+                        <span class="text-green">
+                            200,00
+                        </span>
+                    </span>
+                    <a href="" class="btn1">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
             </div>
-            <div>
+            <div class="card p-2">
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/rastelo.webp" alt="Rastelo">
                 </div>
                 <h3>
                     Rastelo
                 </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>
+                        R$
+                        <span class="text-green">
+                            50,00
+                        </span>
+                    </span>
+                    <a href="" class="btn1">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
             </div>
-            <div>
+            <div class="card p-2">
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/tesoura-de-poda.webp" alt="Tesoura de poda">
                 </div>
                 <h3>
                     Tesoura de poda
                 </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>
+                        R$
+                        <span class="text-green">
+                            29,90
+                        </span>
+                    </span>
+                    <a href="" class="btn1">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+    <section class="contato scroll-mt" id="contato">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.229927680017!2d-49.499249282332805!3d-21.34395929889062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be7842c03e66a9%3A0x8d155d03963056d8!2sAv.%20Tirso%20Martins%2C%20471%2C%20Sales%20-%20SP%2C%2014980-000!5e0!3m2!1spt-BR!2sbr!4v1737590703215!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="dados text-white p-3 d-flex align-items-center">
+            Rua Tirso Martins 471, Centro - Sales / SP
+            <br>
+            contato@dominioxpto.com
+            <br>
+            (17) 3557-1234
+        </div>
+    </section>
+    <section class="numeros text-center">
+        <div class="container">
+            <div class="d-inline-block w-25">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h3>
+                    20
+                </h3>
+                <p>
+                    Anos de experiência
+                </p>
+            </div>
+            <div class="d-inline-block w-25">
+                <i class="fa-solid fa-user-group"></i>
+                <h3>
+                    350+
+                </h3>
+                <p>
+                    Clientes atendidos
+                </p>
+            </div>
+            <div class="d-inline-block w-25">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>
+                    1200+
+                </h3>
+                <p>
+                    Projetos desenvolvidos
+                </p>
+            </div>
+            <div class="d-inline-block w-25">
+                <i class="fa-regular fa-clock"></i>
+                <h3>
+                    35000
+                </h3>
+                <p>
+                    Horas de dedicação
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
 </body>
 
 </html>
