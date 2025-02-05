@@ -109,6 +109,7 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.125);
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 header div {
@@ -227,7 +228,7 @@ header h1 {
     padding: 100px 0;
 }
 
-.servicos .capa {
+ .capa {
     aspect-ratio: 10/6;
     background-position: center center;
     background-size: cover;
@@ -238,7 +239,7 @@ header h1 {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.servicos .capa:hover {
+ .capa:hover {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 30px;
@@ -383,4 +384,42 @@ header h1 {
     bottom: 10%;
     width: 1px;
     background-color: rgba(255, 255, 255, 0.25);
+}
+
+.depoimentos {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #619237;
+}
+
+.depoimentos .d-flex > iframe {
+    width: 33.33%;
+    aspect-ratio: 3/2;
+}
+
+.blog {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.blog h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #202020;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.blog p {
+    line-height: 22.5px;
+    margin-bottom: 15px;
+}
+
+.blog a {
+    color: #e0450c;
+    text-decoration: none;
+}
+
+.dados .d-flex > div {
+    width: 33.33%;
 }
