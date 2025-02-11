@@ -228,7 +228,7 @@ header h1 {
     padding: 100px 0;
 }
 
- .capa {
+.capa {
     aspect-ratio: 10/6;
     background-position: center center;
     background-size: cover;
@@ -239,7 +239,7 @@ header h1 {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
- .capa:hover {
+.capa:hover {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 30px;
@@ -368,15 +368,15 @@ header h1 {
     font-size: 25px;
 }
 
-.numeros p{
+.numeros p {
     margin-top: 10px;
 }
 
-.numeros .container > div {
+.numeros .container>div {
     position: relative;
 }
 
-.numeros .container > div:not(:last-child)::after {
+.numeros .container>div:not(:last-child)::after {
     content: '';
     position: absolute;
     top: 10%;
@@ -386,13 +386,46 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
+.marcas-atendidas {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.marcas-atendidas .d-flex {
+    flex-wrap: wrap;
+}
+
+.marcas-atendidas .logo {
+    width: 25%;
+    aspect-ratio: 2/1.25;
+    background-position: center center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.marcas-atendidas .container .d-flex:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.marcas-atendidas .container .d-flex .logo:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    border-right: 1px solid #ddd;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
 .depoimentos {
     padding-top: 100px;
     padding-bottom: 100px;
     background-color: #619237;
 }
 
-.depoimentos .d-flex > iframe {
+.depoimentos .d-flex>iframe {
     width: 33.33%;
     aspect-ratio: 3/2;
 }
@@ -420,6 +453,25 @@ header h1 {
     text-decoration: none;
 }
 
-.dados .d-flex > div {
+.dados {
+    background-color: #e0450c;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.dados .d-flex>div {
     width: 33.33%;
+}
+
+.dados i {
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.dados span {
+    display: block;
+    color: #fff;
+    line-height: 30px;
+    font-size: 20px;
 }
