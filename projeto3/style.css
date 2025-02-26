@@ -10,6 +10,14 @@
     border: 1px solid red;
 }
 
+.text-success {
+    color: green;
+}
+
+.text-danger {
+    color: red;
+}
+
 .text-center {
     text-align: center;
 }
@@ -122,7 +130,7 @@ header div {
     align-items: center;
 }
 
-header ul {
+header .menu {
     list-style: none;
     display: flex;
     column-gap: 30px;
@@ -133,7 +141,11 @@ header ul {
     margin: 0 auto;
 }
 
-header a {
+header .menu>li {
+    position: relative;
+}
+
+header .menu>li>a {
     text-decoration: none;
     color: #202020;
     padding: 35px 0;
@@ -141,8 +153,34 @@ header a {
     display: inline-block;
 }
 
-header a:hover {
+header .menu>li>a:hover {
     border-top: 5px solid #e0450c;
+}
+
+header .menu>li>ul {
+    display: none;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    list-style: none;
+    border-left: 1px solid #e0450c;
+}
+
+header .menu>li:hover>ul {
+    display: block;
+}
+
+header .menu>li>ul a {
+    text-decoration: none;
+    color: #202020;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+header .menu>li>ul a:hover {
+    background-color: #e0450c;
+    color: #fff;
 }
 
 header h1 {
@@ -474,6 +512,58 @@ header h1 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.planos {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.planos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.planos td {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 15px;
+}
+
+.planos table tr:first-child td:nth-child(3) {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+}
+
+/* ou esse de baixo para especificar as, caso não de certo a expressão matemática  */
+
+/* .planos table tr:first-child td:nth-child(2), 
+.planos table tr:first-child td:nth-child(3),
+.planos table tr:first-child td:nth-child(4) {
+    background-color: #fff;
+    color: #202020;
+} */
+
+.planos table tr:first-child td:first-child {
+    border-top: none;
+    border-left: none;
+}
+
+.planos table tr:last-child td:first-child {
+    border-bottom: none;
+    border-left: none;
+}
+
+.planos table tr:nth-child(2) td:nth-child(n+2) {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+}
+
+.planos table tr:nth-child(odd) td {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.planos table tr:first-child td {
+    background-color: #fff;
 }
 
 .blog {

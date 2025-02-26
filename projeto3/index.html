@@ -22,11 +22,20 @@
             <h1>
                 Company name
             </h1>
-            <ul>
+            <ul class="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#produtos">Produtos <i class="fa-solid fa-angle-down"></i></a>
+                    <ul>
+                        <li>
+                            <a href="">Categoria&nbsp;A</a>
+                        </li>
+                        <li>
+                            <a href="">Categoria&nbsp;B</a>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
@@ -375,6 +384,49 @@
             <div class="imagem" style="background-image: url('./img/galeria8.jpg');"></div>
         </div>
     </section>
+    <section class="planos text-center">
+        <h2 class="h2">Planos</h2>
+        <div class="container">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Standart</td>
+                    <td>Premium</td>
+                    <td>Business</td>
+                </tr>
+                <tr>
+                    <td>Serviços</td>
+                    <td>R$ 99,90</td>
+                    <td>R$ 149,90</td>
+                    <td>R$ 199,90</td>
+                </tr>
+                <tr>
+                    <td>Serviço 1</td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                    <td>Serviço 2</td>
+                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                    <td>Serviço 3</td>
+                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td><i class="fa-solid fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="">Comprar</a></td>
+                    <td><a href="">Comprar</a></td>
+                    <td><a href="">Comprar</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
     <section class="blog">
         <h2 class="h2 text-center">
             Blog
@@ -418,7 +470,7 @@
             </div>
         </div>
     </section>
-    <section class="dados text-center">
+    <section class="dados text-center scroll-mt" id="contato">
         <div class="container d-flex column-gap-30">
             <div>
                 <i class="fa-solid fa-location-dot"></i>
@@ -442,7 +494,7 @@
             </div>
         </div>
     </section>
-    <section class="contato scroll-mt" id="contato">
+    <section class="contato scroll-mt">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.229927680017!2d-49.499249282332805!3d-21.34395929889062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be7842c03e66a9%3A0x8d155d03963056d8!2sAv.%20Tirso%20Martins%2C%20471%2C%20Sales%20-%20SP%2C%2014980-000!5e0!3m2!1spt-BR!2sbr!4v1737590703215!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
