@@ -530,7 +530,7 @@ header h1 {
 }
 
 .planos table tr:first-child td:nth-child(3) {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: #e0450c;
     color: #fff;
 }
 
@@ -554,7 +554,7 @@ header h1 {
 }
 
 .planos table tr:nth-child(2) td:nth-child(n+2) {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: #619237;
     color: #fff;
 }
 
@@ -564,6 +564,21 @@ header h1 {
 
 .planos table tr:first-child td {
     background-color: #fff;
+}
+
+.planos a {
+    background-color: #e0450c;
+    color: #fff;
+    text-decoration: none;
+    padding: 12.5px;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid #e0450c
+}
+
+.planos a:hover {
+    background-color: #fff;
+    color: #e0450c;
 }
 
 .blog {
@@ -639,4 +654,106 @@ header h1 {
 .call-to-action a:hover {
     background-color: #fff;
     color: #e0450c;
+}
+
+.formulario {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.formulario form {
+    display: block;
+    padding: 0 12.5%;
+}
+
+.formulario input, .formulario textarea, .formulario button  {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.formulario input, .formulario textarea {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.formulario button {
+    background-color: #619237;
+    color: #fff;
+    border: 2px solid #619237;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.formulario button:hover {
+    background-color: #fff;
+    color: #619237;
+}
+
+footer {
+    background-color: #202020;
+    color: #fff;
+    padding:50px 0;
+}
+
+footer .d-flex > div {
+    width: 25%;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #e0450c;
+}
+
+footer .container:first-child ul > li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+footer input{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+}
+
+footer button {
+    display: inline-block;
+    background-color: #619237;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 2px solid #619237;
+    margin-top: 15px;
+}
+
+footer button:hover {
+    background-color: #fff;
+    color: #619237;
+}
+
+footer .container:last-child {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 50px;
+}
+
+footer .container:last-child li {
+    display: inline-block;
+}
+
+footer .container:last-child ul > li:not(:last-child) {
+    margin-right: 10px;
 }
