@@ -22,8 +22,16 @@
     text-align: center;
 }
 
+.text-uppercase {
+    text-transform: uppercase;
+}
+
 .d-flex {
     display: flex;
+}
+
+.d-block {
+    display: block;
 }
 
 .flex-wrap {
@@ -50,7 +58,7 @@
     align-items: center;
 }
 
-.column-gap-30 {
+.column-gap-3 {
     column-gap: 30px;
 }
 
@@ -64,6 +72,10 @@
 
 .p-3 {
     padding: 30px;
+}
+
+.mt-1 {
+    margin-top: 10px;
 }
 
 .h2 {
@@ -91,7 +103,7 @@
     color: #fff;
 }
 
-.text-green {
+.text-success {
     color: #619237;
 }
 
@@ -112,37 +124,65 @@
     scroll-margin-top: 94px;
 }
 
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-warning {
+    background-color: #e0450c;
+}
+
+.position-sticky {
+    position: sticky;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.start-0 {
+    left: 0;
+}
+
+.z-3 {
+    z-index: 3;
+}
+
+.list-unstyled {
+    list-style: none;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.d-none {
+    display: none;
+}
+
+.border-start {
+    border-left: 1px solid #ddd;
+}
+
+.border-warning {
+    border-color: #e0450c;
+}
 
 img {
     max-width: 100%;
 }
 
 header {
-    background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.125);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-header div {
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .menu {
-    list-style: none;
-    display: flex;
-    column-gap: 30px;
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
-}
-
-header .menu>li {
-    position: relative;
 }
 
 header .menu>li>a {
@@ -158,12 +198,7 @@ header .menu>li>a:hover {
 }
 
 header .menu>li>ul {
-    display: none;
-    position: absolute;
     top: 85px;
-    left: 0;
-    list-style: none;
-    border-left: 1px solid #e0450c;
 }
 
 header .menu>li:hover>ul {
@@ -173,7 +208,6 @@ header .menu>li:hover>ul {
 header .menu>li>ul a {
     text-decoration: none;
     color: #202020;
-    background-color: #fff;
     display: inline-block;
     padding: 10px 15px;
 }
@@ -181,10 +215,6 @@ header .menu>li>ul a {
 header .menu>li>ul a:hover {
     background-color: #e0450c;
     color: #fff;
-}
-
-header h1 {
-    color: #619237;
 }
 
 .hero {
@@ -197,25 +227,17 @@ header h1 {
 }
 
 .hero h2 {
-    color: #fff;
     font-size: 50px;
     line-height: 60px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-.hero h2 span {
-    text-transform: uppercase;
-    display: block;
-}
-
 .hero h3 {
-    color: #fff;
     font-size: 40px;
 }
 
 .hero form {
     width: 375px;
-    background-color: #e0450c;
     padding: 50px;
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -249,17 +271,12 @@ header h1 {
 }
 
 .hero h4 {
-    color: #fff;
-    text-transform: uppercase;
     font-size: 30px;
     letter-spacing: 1px;
 }
 
 .hero p {
-    color: #fff;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 10px;
     margin-bottom: 30px;
 }
 
@@ -327,7 +344,6 @@ header h1 {
 .sobre {
     background-color: #619237;
     padding: 100px 0px;
-    color: #fff;
 }
 
 .sobre h2 {
@@ -362,7 +378,6 @@ header h1 {
 .sobre h3 {
     font-size: 20px;
     font-weight: 300;
-    text-transform: uppercase;
 }
 
 .produtos {
@@ -384,7 +399,6 @@ header h1 {
 
 .produtos h3 {
     margin-top: 15px;
-    text-transform: uppercase;
     color: #202020;
 }
 
@@ -422,8 +436,6 @@ header h1 {
 }
 
 .numeros {
-    background-color: #e0450c;
-    color: #fff;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -605,7 +617,6 @@ header h1 {
 }
 
 .dados {
-    background-color: #e0450c;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -621,8 +632,6 @@ header h1 {
 }
 
 .dados span {
-    display: block;
-    color: #fff;
     line-height: 30px;
     font-size: 20px;
 }
@@ -630,8 +639,6 @@ header h1 {
 .call-to-action {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #e0450c;
-    color: #fff;
 }
 
 .call-to-action h2 {
@@ -662,18 +669,20 @@ header h1 {
 }
 
 .formulario form {
-    display: block;
     padding: 0 12.5%;
 }
 
-.formulario input, .formulario textarea, .formulario button  {
+.formulario input,
+.formulario textarea,
+.formulario button {
     display: block;
     width: 100%;
     margin-bottom: 15px;
     padding: 15px;
 }
 
-.formulario input, .formulario textarea {
+.formulario input,
+.formulario textarea {
     border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
@@ -693,20 +702,15 @@ header h1 {
 
 footer {
     background-color: #202020;
-    color: #fff;
-    padding:50px 0;
+    padding: 50px 0;
 }
 
-footer .d-flex > div {
+footer .d-flex>div {
     width: 25%;
 }
 
 footer h3 {
     margin-bottom: 15px;
-}
-
-footer ul {
-    list-style: none;
 }
 
 footer a {
@@ -718,11 +722,11 @@ footer a:hover {
     color: #e0450c;
 }
 
-footer .container:first-child ul > li:not(:last-child) {
+footer .container:first-child ul>li:not(:last-child) {
     margin-bottom: 10px;
 }
 
-footer input{
+footer input {
     display: block;
     width: 100%;
     padding: 15px;
@@ -754,6 +758,6 @@ footer .container:last-child li {
     display: inline-block;
 }
 
-footer .container:last-child ul > li:not(:last-child) {
+footer .container:last-child ul>li:not(:last-child) {
     margin-right: 10px;
 }

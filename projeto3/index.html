@@ -17,17 +17,17 @@
 </head>
 
 <body>
-    <header>
-        <div class="container d-flex">
-            <h1>
+    <header class="bg-white position-sticky top-0 z-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-success">
                 Company name
             </h1>
-            <ul class="menu">
+            <ul class="menu d-flex list-unstyled column-gap-3">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#produtos">Produtos <i class="fa-solid fa-angle-down"></i></a>
-                    <ul>
+                <li class="position-relative"><a href="#produtos">Produtos <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="bg-white list-unstyled d-none position-absolute start-0 border-start border-warning">
                         <li>
                             <a href="">Categoria&nbsp;A</a>
                         </li>
@@ -43,21 +43,21 @@
     <section class="hero scroll-mt" id="home">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
-                <h2>
+                <h2 class="text-white">
                     Serviço completo para
-                    <span>
+                    <span class="text-uppercase d-block">
                         residências e comércios
                     </span>
                 </h2>
-                <h3>
+                <h3 class="text-white">
                     Jardinagem e manutenção
                 </h3>
             </div>
-            <form action="" class="text-center">
-                <h4>
+            <form action="" class="text-center bg-warning">
+                <h4 class="text-white text-uppercase">
                     Agendamento
                 </h4>
-                <p>
+                <p class="text-white text-uppercase mt-1">
                     Informe seus dados abaixo
                 </p>
                 <input type="text" placeholder="Seu nome">
@@ -73,7 +73,7 @@
         <h2 class="text-center h2">
             Serviços
         </h2>
-        <div class="container d-flex column-gap-30">
+        <div class="container d-flex column-gap-3">
             <div>
                 <div class="capa" style="background-image: url('./img/servico-de-corte-e-manutencao.png');">
                 </div>
@@ -139,7 +139,7 @@
             </div>
         </div>
     </section>
-    <section class="sobre scroll-mt" id="sobre">
+    <section class="sobre scroll-mt text-white" id="sobre">
         <div class="container">
             <h2 class="h2 text-white text-center">
                 Sobre
@@ -163,7 +163,7 @@
                 </div>
                 <div>
                     <div class="item">
-                        <h3>
+                        <h3 class="text-uppercase">
                             Missão
                         </h3>
                         <p>
@@ -173,7 +173,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h3>
+                        <h3 class="text-uppercase">
                             Visão
                         </h3>
                         <p>
@@ -183,7 +183,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h3>
+                        <h3 class="text-uppercase">
                             Valores
                         </h3>
                         <p>
@@ -200,12 +200,12 @@
         <h2 class="h2 text-center">
             Produtos
         </h2>
-        <div class="container d-flex column-gap-30">
+        <div class="container d-flex column-gap-3">
             <div class="card p-2">
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/Borrifador.webp" alt="Borrifador">
                 </div>
-                <h3>
+                <h3 class="text-uppercase">
                     Borrifador
                 </h3>
                 <p>
@@ -214,7 +214,7 @@
                 <div class="d-flex justify-content-between">
                     <span>
                         R$
-                        <span class="text-green">
+                        <span class="text-success">
                             34,90
                         </span>
                     </span>
@@ -227,7 +227,7 @@
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/cortador-de-grama.jpg" alt="Cortador de grama">
                 </div>
-                <h3>
+                <h3 class="text-uppercase">
                     Cortador de grama
                 </h3>
                 <p>
@@ -236,7 +236,7 @@
                 <div class="d-flex justify-content-between">
                     <span>
                         R$
-                        <span class="text-green">
+                        <span class="text-success">
                             200,00
                         </span>
                     </span>
@@ -249,7 +249,7 @@
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/rastelo.webp" alt="Rastelo">
                 </div>
-                <h3>
+                <h3 class="text-uppercase">
                     Rastelo
                 </h3>
                 <p>
@@ -258,7 +258,7 @@
                 <div class="d-flex justify-content-between">
                     <span>
                         R$
-                        <span class="text-green">
+                        <span class="text-success">
                             50,00
                         </span>
                     </span>
@@ -271,7 +271,7 @@
                 <div class="imagem d-flex align-items-center">
                     <img src="./img/tesoura-de-poda.webp" alt="Tesoura de poda">
                 </div>
-                <h3>
+                <h3 class="text-uppercase">
                     Tesoura de poda
                 </h3>
                 <p>
@@ -280,7 +280,7 @@
                 <div class="d-flex justify-content-between">
                     <span>
                         R$
-                        <span class="text-green">
+                        <span class="text-success">
                             29,90
                         </span>
                     </span>
@@ -291,7 +291,7 @@
             </div>
         </div>
     </section>
-    <section class="numeros text-center">
+    <section class="numeros text-center bg-warning text-white">
         <div class="container">
             <div class="d-inline-block w-25">
                 <i class="fa-solid fa-calendar-days"></i>
@@ -354,7 +354,7 @@
         <h2 class="h2 text-white">
             Depoimentos
         </h2>
-        <div class="container d-flex column-gap-30">
+        <div class="container d-flex column-gap-3">
             <iframe src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -431,7 +431,7 @@
         <h2 class="h2 text-center">
             Blog
         </h2>
-        <div class="container d-flex column-gap-30">
+        <div class="container d-flex column-gap-3">
             <div>
                 <div class="capa" style="background-image: url('./img/noticia1.webp');"></div>
                 <h3>
@@ -471,10 +471,10 @@
         </div>
     </section>
     <section class="dados text-center scroll-mt" id="contato">
-        <div class="container d-flex column-gap-30">
+        <div class="container d-flex column-gap-3">
             <div>
                 <i class="fa-solid fa-location-dot"></i>
-                <span>
+                <span class="text-white d-block">
                     Rua Paraiso 123, Centro
                     <br>
                     Sales - SP
@@ -482,13 +482,13 @@
             </div>
             <div>
                 <i class="fa-solid fa-envelope"></i>
-                <span>
+                <span class="text-white d-block">
                     contato@dominioxpto.com.br
                 </span>
             </div>
             <div>
                 <i class="fa-solid fa-phone"></i>
-                <span>
+                <span class="text-white d-block">
                     0800 - 123 - 4567
                 </span>
             </div>
@@ -498,7 +498,7 @@
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.229927680017!2d-49.499249282332805!3d-21.34395929889062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be7842c03e66a9%3A0x8d155d03963056d8!2sAv.%20Tirso%20Martins%2C%20471%2C%20Sales%20-%20SP%2C%2014980-000!5e0!3m2!1spt-BR!2sbr!4v1737590703215!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="dados text-white p-3 d-flex align-items-center">
+        <div class="dados text-white p-3 d-flex align-items-center bg-warning">
             Rua Tirso Martins 471, Centro - Sales / SP
             <br>
             contato@dominioxpto.com
@@ -506,7 +506,7 @@
             (17) 3557-1234
         </div>
     </section>
-    <section class="call-to-action">
+    <section class="call-to-action bg-warning text-white">
         <div class="container d-flex justify-content-between align-items-center">
             <h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit
@@ -519,24 +519,24 @@
             <h2 class="text-center h2">
                 Fale conosco
             </h2>
-            <form action="">
+            <form action="" class="d-block">
                 <input type="text" name="" id="" placeholder="Nome">
                 <input type="email" name="" id="" placeholder="E-mail">
                 <input type="number" name="" id="" placeholder="Telefone">
                 <textarea name="" id="" placeholder="Deixe sua mensagem aqui" rows="5"></textarea>
-                <button>
+                <button class="d-block">
                     ENVIAR
                 </button>
             </form>
         </div>
     </section>
-    <footer>
+    <footer class="text-white">
         <div class="container d-flex justify-content-between">
             <div>
                 <h3>
                     Menu
                 </h3>
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <a href="">Home</a>
                     </li>
@@ -558,7 +558,7 @@
                 <h3>
                     Produtos
                 </h3>
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <a href="">Categoria A</a>
                     </li>
@@ -571,7 +571,7 @@
                 <h3>
                     Serviços
                 </h3>
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <a href="">Serviço A</a>
                     </li>
