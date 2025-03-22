@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./framework.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <header class="bg-white position-sticky top-0 z-3">
+    <header class="bg-white position-sticky top-0 z-3 shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="text-success">
                 Company name
@@ -43,21 +44,21 @@
     <section class="hero scroll-mt" id="home">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
-                <h2 class="text-white">
+                <h2 class="text-white fs-5">
                     Serviço completo para
                     <span class="text-uppercase d-block">
                         residências e comércios
                     </span>
                 </h2>
-                <h3 class="text-white">
+                <h3 class="text-white fs-4">
                     Jardinagem e manutenção
                 </h3>
             </div>
-            <form action="" class="text-center bg-warning">
-                <h4 class="text-white text-uppercase">
+            <form action="" class="text-center bg-warning p-5">
+                <h4 class="text-white text-uppercase fs-3">
                     Agendamento
                 </h4>
-                <p class="text-white text-uppercase mt-1">
+                <p class="text-white text-uppercase mt-1 mb-3">
                     Informe seus dados abaixo
                 </p>
                 <input type="text" placeholder="Seu nome">
@@ -75,18 +76,18 @@
         </h2>
         <div class="container d-flex column-gap-3">
             <div>
-                <div class="capa" style="background-image: url('./img/servico-de-corte-e-manutencao.png');">
+                <div class="capa shadow" style="background-image: url('./img/servico-de-corte-e-manutencao.png');">
                 </div>
-                <h3>
+                <h3 class="fs-3 mt-3 fw-normal">
                     Corte e Manutenção
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus modi quam libero nesciunt hic!
                     Illo recusandae minima,
                     ut atque nesciunt odio cumque similique vero harum ea. Quam officiis
                     similique cupiditate?
                 </p>
-                <a href="./servicos/corte-e-manutencao.html">
+                <a href="./servicos/corte-e-manutencao.html" class="text-decoration-none">
                     <span>
                         +
                     </span>
@@ -96,18 +97,19 @@
                 </a>
             </div>
             <div>
-                <div class="capa" style="background-image: url('./img/servico-de-adubacao-e-fertilizacao.webp');"></div>
-                <h3>
+                <div class="capa shadow"
+                    style="background-image: url('./img/servico-de-adubacao-e-fertilizacao.webp');"></div>
+                <h3 class="fs-3 mt-3 fw-normal">
                     Adubação e Fertilização
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Nisi quasi ut dolores voluptates aperiam
                     ipsam doloremque consequuntur dignissimos sit, libero,
                     voluptas dolor possimus assumenda vel odit
                     aliquid cum eius pariatur.
                 </p>
-                <a href="./servicos/adubacao-e-fertilizacao.html">
+                <a href="./servicos/adubacao-e-fertilizacao.html" class="text-decoration-none">
                     <span>
                         +
                     </span>
@@ -117,18 +119,18 @@
                 </a>
             </div>
             <div>
-                <div class="capa" style="background-image: url('./img/servico-controle-de-pragas.jpg');"></div>
-                <h3>
+                <div class="capa shadow" style="background-image: url('./img/servico-controle-de-pragas.jpg');"></div>
+                <h3 class="fs-3 mt-3 fw-normal">
                     Controle de pragas
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Itaque perspiciatis quae dolor quaerat hic
                     quo debitis excepturi error maiores.
                     Provident itaque iste magni repellendus nesciunt at pariatur
                     ullam aliquid quidem?
                 </p>
-                <a href="./servicos/controle-de-pragas.html">
+                <a href="./servicos/controle-de-pragas.html" class="text-decoration-none">
                     <span>
                         +
                     </span>
@@ -141,7 +143,7 @@
     </section>
     <section class="sobre scroll-mt text-white" id="sobre">
         <div class="container">
-            <h2 class="h2 text-white text-center">
+            <h2 class="h2 text-white text-center mb-3">
                 Sobre
             </h2>
             <p class="text-center">
@@ -157,13 +159,13 @@
                 voluptatum dolore repellendus rerum ipsum velit quasi fugiat cumque repudiandae?
                 Laudantium praesentium officiis saepe.
             </p>
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <div class="w-5">
                     <img src="./img/empresa.jpg" alt="Empresa">
                 </div>
                 <div>
                     <div class="item">
-                        <h3 class="text-uppercase">
+                        <h3 class="text-uppercase fs-2 fw-light">
                             Missão
                         </h3>
                         <p>
@@ -173,7 +175,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h3 class="text-uppercase">
+                        <h3 class="text-uppercase fs-2 fw-light">
                             Visão
                         </h3>
                         <p>
@@ -183,7 +185,7 @@
                         </p>
                     </div>
                     <div class="item">
-                        <h3 class="text-uppercase">
+                        <h3 class="text-uppercase fs-2 fw-light">
                             Valores
                         </h3>
                         <p>
@@ -201,14 +203,14 @@
             Produtos
         </h2>
         <div class="container d-flex column-gap-3">
-            <div class="card p-2">
-                <div class="imagem d-flex align-items-center">
+            <div class="card p-2 w-25">
+                <div class="imagem d-flex align-items-center justify-content-center">
                     <img src="./img/Borrifador.webp" alt="Borrifador">
                 </div>
-                <h3 class="text-uppercase">
+                <h3 class="text-uppercase mt-1">
                     Borrifador
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <div class="d-flex justify-content-between">
@@ -223,14 +225,14 @@
                     </a>
                 </div>
             </div>
-            <div class="card p-2">
-                <div class="imagem d-flex align-items-center">
+            <div class="card p-2 w-25">
+                <div class="imagem d-flex align-items-center justify-content-center">
                     <img src="./img/cortador-de-grama.jpg" alt="Cortador de grama">
                 </div>
-                <h3 class="text-uppercase">
+                <h3 class="text-uppercase mt-1">
                     Cortador de grama
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <div class="d-flex justify-content-between">
@@ -245,14 +247,14 @@
                     </a>
                 </div>
             </div>
-            <div class="card p-2">
-                <div class="imagem d-flex align-items-center">
+            <div class="card p-2 w-25">
+                <div class="imagem d-flex align-items-center justify-content-center">
                     <img src="./img/rastelo.webp" alt="Rastelo">
                 </div>
-                <h3 class="text-uppercase">
+                <h3 class="text-uppercase mt-1">
                     Rastelo
                 </h3>
-                <p>
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <div class="d-flex justify-content-between">
@@ -267,14 +269,14 @@
                     </a>
                 </div>
             </div>
-            <div class="card p-2">
-                <div class="imagem d-flex align-items-center">
+            <div class="card p-2 w-25">
+                <div class="imagem d-flex align-items-center justify-content-center">
                     <img src="./img/tesoura-de-poda.webp" alt="Tesoura de poda">
                 </div>
                 <h3 class="text-uppercase">
                     Tesoura de poda
                 </h3>
-                <p>
+                <p class="mb-1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <div class="d-flex justify-content-between">
@@ -293,39 +295,39 @@
     </section>
     <section class="numeros text-center bg-warning text-white">
         <div class="container">
-            <div class="d-inline-block w-25">
-                <i class="fa-solid fa-calendar-days"></i>
-                <h3>
+            <div class="d-inline-block w-24 position-relative">
+                <i class="fa-solid fa-calendar-days fs-5"></i>
+                <h3 class="mt-1 fs-3">
                     20
                 </h3>
-                <p>
+                <p class="mt-1">
                     Anos de experiência
                 </p>
             </div>
-            <div class="d-inline-block w-25">
-                <i class="fa-solid fa-user-group"></i>
-                <h3>
+            <div class="d-inline-block w-24 position-relative">
+                <i class="fa-solid fa-user-group fs-5"></i>
+                <h3 class="fs-3 mt-1">
                     350+
                 </h3>
-                <p>
+                <p class="mt-1">
                     Clientes atendidos
                 </p>
             </div>
-            <div class="d-inline-block w-25">
-                <i class="fa-solid fa-list-check"></i>
-                <h3>
+            <div class="d-inline-block w-24 position-relative">
+                <i class="fa-solid fa-list-check fs-5"></i>
+                <h3 class="fs-3 mt-1">
                     1200+
                 </h3>
-                <p>
+                <p class="mt-1">
                     Projetos desenvolvidos
                 </p>
             </div>
-            <div class="d-inline-block w-25">
-                <i class="fa-regular fa-clock"></i>
-                <h3>
+            <div class="d-inline-block w-24 position-relative">
+                <i class="fa-regular fa-clock fs-5"></i>
+                <h3 class="fs-3 mt-1">
                     35000
                 </h3>
-                <p>
+                <p class="mt-1">
                     Horas de dedicação
                 </p>
             </div>
@@ -336,17 +338,17 @@
             Marcas Atendidas
         </h2>
         <div class="container">
-            <div class="d-flex">
-                <div class="logo" style="background-image: url('./img/cliente1.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente2.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente3.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente4.png');"></div>
+            <div class="d-flex flex-wrap">
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente1.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente2.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente3.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente4.png');"></div>
             </div>
-            <div class="d-flex">
-                <div class="logo" style="background-image: url('./img/cliente5.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente6.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente7.png');"></div>
-                <div class="logo" style="background-image: url('./img/cliente8.png');"></div>
+            <div class="d-flex flex-wrap">
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente5.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente6.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente7.png');"></div>
+                <div class="logo w-25 position-relative" style="background-image: url('./img/cliente8.png');"></div>
             </div>
         </div>
     </section>
@@ -374,55 +376,55 @@
             Galeria
         </h2>
         <div class="container d-flex flex-wrap">
-            <div class="imagem" style="background-image: url('./img/galeria1.jfif');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria2.jfif');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria3.jfif');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria4.jfif');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria5.jpg');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria6.jfif');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria7.jpg');"></div>
-            <div class="imagem" style="background-image: url('./img/galeria8.jpg');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria1.jfif');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria2.jfif');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria3.jfif');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria4.jfif');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria5.jpg');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria6.jfif');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria7.jpg');"></div>
+            <div class="imagem w-25" style="background-image: url('./img/galeria8.jpg');"></div>
         </div>
     </section>
     <section class="planos text-center">
         <h2 class="h2">Planos</h2>
         <div class="container">
-            <table>
+            <table class="w-100">
                 <tr>
-                    <td></td>
-                    <td>Standart</td>
-                    <td>Premium</td>
-                    <td>Business</td>
+                    <td class="p-1"></td>
+                    <td class="p-1">Standart</td>
+                    <td class="p-1">Premium</td>
+                    <td class="p-1">Business</td>
                 </tr>
                 <tr>
-                    <td>Serviços</td>
-                    <td>R$ 99,90</td>
-                    <td>R$ 149,90</td>
-                    <td>R$ 199,90</td>
+                    <td class="p-1">Serviços</td>
+                    <td class="p-1">R$ 99,90</td>
+                    <td class="p-1">R$ 149,90</td>
+                    <td class="p-1">R$ 199,90</td>
                 </tr>
                 <tr>
-                    <td>Serviço 1</td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1">Serviço 1</td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
                 </tr>
                 <tr>
-                    <td>Serviço 2</td>
-                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1">Serviço 2</td>
+                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
                 </tr>
                 <tr>
-                    <td>Serviço 3</td>
-                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td><i class="fa-solid fa-check text-success"></i></td>
+                    <td class="p-1">Serviço 3</td>
+                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><a href="">Comprar</a></td>
-                    <td><a href="">Comprar</a></td>
-                    <td><a href="">Comprar</a></td>
+                    <td class="p-1"></td>
+                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
+                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
+                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
                 </tr>
             </table>
         </div>
@@ -433,71 +435,72 @@
         </h2>
         <div class="container d-flex column-gap-3">
             <div>
-                <div class="capa" style="background-image: url('./img/noticia1.webp');"></div>
-                <h3>
+                <div class="capa shadow" style="background-image: url('./img/noticia1.webp');"></div>
+                <h3 class="mb-1 fs-3 fw-normal mt-3">
                     Lorem Ipsum
                 </h3>
-                <p>
+                <p class="mb-1">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
                     possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
                     perferendis corporis est?
                 </p>
-                <a href="">Leia mais</a>
+                <a href="" class="text-decoration-none">Leia mais</a>
             </div>
             <div>
-                <div class="capa" style="background-image: url('./img/noticia2.webp');"></div>
-                <h3>
+                <div class="capa shadow" style="background-image: url('./img/noticia2.webp');"></div>
+                <h3 class="mb-1 fs-3 fw-normal mt-3">
                     Lorem Ipsum
                 </h3>
-                <p>
+                <p class="mb-1">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
                     possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
                     perferendis corporis est?
                 </p>
-                <a href="">Leia mais</a>
+                <a href="" class="text-decoration-none">Leia mais</a>
             </div>
             <div>
-                <div class="capa" style="background-image: url('./img/noticia3.webp');"></div>
-                <h3>
+                <div class="capa shadow" style="background-image: url('./img/noticia3.webp');"></div>
+                <h3 class="mb-1 fs-3 fw-normal mt-3">
                     Lorem Ipsum
                 </h3>
-                <p>
+                <p class="mb-1">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
                     possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
                     perferendis corporis est?
                 </p>
-                <a href="">Leia mais</a>
+                <a href="" class="text-decoration-none">Leia mais</a>
             </div>
         </div>
     </section>
     <section class="dados text-center scroll-mt" id="contato">
         <div class="container d-flex column-gap-3">
             <div>
-                <i class="fa-solid fa-location-dot"></i>
-                <span class="text-white d-block">
+                <i class="fa-solid fa-location-dot mb-1 fs-4"></i>
+                <span class="text-white d-block fs-2">
                     Rua Paraiso 123, Centro
                     <br>
                     Sales - SP
                 </span>
             </div>
             <div>
-                <i class="fa-solid fa-envelope"></i>
-                <span class="text-white d-block">
+                <i class="fa-solid fa-envelope mb-1 fs-4"></i>
+                <span class="text-white d-block fs-2">
                     contato@dominioxpto.com.br
                 </span>
             </div>
             <div>
-                <i class="fa-solid fa-phone"></i>
-                <span class="text-white d-block">
+                <i class="fa-solid fa-phone mb-1 fs-4"></i>
+                <span class="text-white d-block fs-2">
                     0800 - 123 - 4567
                 </span>
             </div>
         </div>
     </section>
-    <section class="contato scroll-mt">
+    <section class="contato scroll-mt position-relative">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.229927680017!2d-49.499249282332805!3d-21.34395929889062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be7842c03e66a9%3A0x8d155d03963056d8!2sAv.%20Tirso%20Martins%2C%20471%2C%20Sales%20-%20SP%2C%2014980-000!5e0!3m2!1spt-BR!2sbr!4v1737590703215!5m2!1spt-BR!2sbr"
-            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            class="w-100"></iframe>
         <div class="dados text-white p-3 d-flex align-items-center bg-warning">
             Rua Tirso Martins 471, Centro - Sales / SP
             <br>
@@ -508,7 +511,7 @@
     </section>
     <section class="call-to-action bg-warning text-white">
         <div class="container d-flex justify-content-between align-items-center">
-            <h2>
+            <h2 class="fw-light fs-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit
             </h2>
             <a href="">Agendar</a>
@@ -532,8 +535,8 @@
     </section>
     <footer class="text-white">
         <div class="container d-flex justify-content-between">
-            <div>
-                <h3>
+            <div class="w-25">
+                <h3 class="mb-1">
                     Menu
                 </h3>
                 <ul class="list-unstyled">
@@ -554,8 +557,8 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <h3>
+            <div class="w-25">
+                <h3 class="mb-1">
                     Produtos
                 </h3>
                 <ul class="list-unstyled">
@@ -567,8 +570,8 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <h3>
+            <div class="w-25">
+                <h3 class="mb-1">
                     Serviços
                 </h3>
                 <ul class="list-unstyled">
@@ -583,8 +586,8 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <h3>
+            <div class="w-25">
+                <h3 class="mb-1">
                     Newsletter
                 </h3>
                 <form action="">
