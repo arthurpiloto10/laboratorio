@@ -19,11 +19,11 @@
 
 <body>
     <header class="bg-white position-sticky top-0 z-3 shadow">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-lg-flex justify-content-between align-items-center">
             <h1 class="text-success">
                 Company name
             </h1>
-            <ul class="menu d-flex list-unstyled column-gap-3">
+            <ul class="menu d-lg-flex list-unstyled column-gap-3">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -41,7 +41,7 @@
             </ul>
         </div>
     </header>
-    <section class="hero scroll-mt" id="home">
+    <section class="hero scroll-mt py-100" id="home">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
                 <h2 class="text-white fs-5">
@@ -61,16 +61,16 @@
                 <p class="text-white text-uppercase mt-1 mb-3">
                     Informe seus dados abaixo
                 </p>
-                <input type="text" placeholder="Seu nome">
-                <input type="email" placeholder="Seu email">
-                <input type="number" placeholder="Seu telefone">
-                <button type="submit">
+                <input type="text" placeholder="Seu nome" class="d-block w-100 mt-1 form-control border-none">
+                <input type="email" placeholder="Seu email" class="d-block w-100 mt-1 form-control border-none">
+                <input type="number" placeholder="Seu telefone" class="d-block w-100 mt-1 form-control border-none">
+                <button type="submit" class="btn btn-dark d-block w-100 mt-2 border-none text-uppercase fw-bold">
                     Agendar
                 </button>
             </form>
         </div>
     </section>
-    <section class="servicos scroll-mt" id="servicos">
+    <section class="servicos scroll-mt py-100" id="servicos">
         <h2 class="text-center h2">
             Serviços
         </h2>
@@ -141,7 +141,7 @@
             </div>
         </div>
     </section>
-    <section class="sobre scroll-mt text-white" id="sobre">
+    <section class="sobre scroll-mt text-white py-100" id="sobre">
         <div class="container">
             <h2 class="h2 text-white text-center mb-3">
                 Sobre
@@ -161,7 +161,7 @@
             </p>
             <div class="d-flex justify-content-between align-items-center mt-4">
                 <div class="w-5">
-                    <img src="./img/empresa.jpg" alt="Empresa">
+                    <img src="./img/empresa.jpg" alt="Empresa" class="img-fluid">
                 </div>
                 <div>
                     <div class="item">
@@ -198,14 +198,14 @@
             </div>
         </div>
     </section>
-    <section class="produtos scroll-mt" id="produtos">
+    <section class="produtos scroll-mt py-100" id="produtos">
         <h2 class="h2 text-center">
             Produtos
         </h2>
         <div class="container d-flex column-gap-3">
             <div class="card p-2 w-25">
                 <div class="imagem d-flex align-items-center justify-content-center">
-                    <img src="./img/Borrifador.webp" alt="Borrifador">
+                    <img src="./img/Borrifador.webp" alt="Borrifador" class="img-fluid">
                 </div>
                 <h3 class="text-uppercase mt-1">
                     Borrifador
@@ -227,7 +227,7 @@
             </div>
             <div class="card p-2 w-25">
                 <div class="imagem d-flex align-items-center justify-content-center">
-                    <img src="./img/cortador-de-grama.jpg" alt="Cortador de grama">
+                    <img src="./img/cortador-de-grama.jpg" alt="Cortador de grama" class="img-fluid">
                 </div>
                 <h3 class="text-uppercase mt-1">
                     Cortador de grama
@@ -249,7 +249,7 @@
             </div>
             <div class="card p-2 w-25">
                 <div class="imagem d-flex align-items-center justify-content-center">
-                    <img src="./img/rastelo.webp" alt="Rastelo">
+                    <img src="./img/rastelo.webp" alt="Rastelo" class="img-fluid">
                 </div>
                 <h3 class="text-uppercase mt-1">
                     Rastelo
@@ -271,12 +271,12 @@
             </div>
             <div class="card p-2 w-25">
                 <div class="imagem d-flex align-items-center justify-content-center">
-                    <img src="./img/tesoura-de-poda.webp" alt="Tesoura de poda">
+                    <img src="./img/tesoura-de-poda.webp" alt="Tesoura de poda" class="img-fluid">
                 </div>
-                <h3 class="text-uppercase">
+                <h3 class="text-uppercase mt-1">
                     Tesoura de poda
                 </h3>
-                <p class="mb-1">
+                <p class="mb-1 mt-1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <div class="d-flex justify-content-between">
@@ -293,7 +293,7 @@
             </div>
         </div>
     </section>
-    <section class="numeros text-center bg-warning text-white">
+    <section class="numeros text-center bg-warning text-white py-100">
         <div class="container">
             <div class="d-inline-block w-24 position-relative">
                 <i class="fa-solid fa-calendar-days fs-5"></i>
@@ -333,7 +333,7 @@
             </div>
         </div>
     </section>
-    <section class="marcas-atendidas">
+    <section class="marcas-atendidas py-100">
         <h2 class="h2 text-center">
             Marcas Atendidas
         </h2>
@@ -352,41 +352,41 @@
             </div>
         </div>
     </section>
-    <section class="depoimentos text-center">
+    <section class="depoimentos text-center py-100">
         <h2 class="h2 text-white">
             Depoimentos
         </h2>
         <div class="container d-flex column-gap-3">
-            <iframe src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
+            <iframe class="ratio-3x2" src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
+            <iframe class="ratio-3x2" src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
+            <iframe class="ratio-3x2" src="https://www.youtube.com/embed/fnQ7NbUK6hg?si=EB4sYJFTYBVolhU-" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
-    <section class="galeria">
+    <section class="galeria py-100">
         <h2 class="h2 text-center">
             Galeria
         </h2>
         <div class="container d-flex flex-wrap">
-            <div class="imagem w-25" style="background-image: url('./img/galeria1.jfif');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria2.jfif');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria3.jfif');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria4.jfif');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria5.jpg');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria6.jfif');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria7.jpg');"></div>
-            <div class="imagem w-25" style="background-image: url('./img/galeria8.jpg');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria1.jfif');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria2.jfif');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria3.jfif');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria4.jfif');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria5.jpg');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria6.jfif');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria7.jpg');"></div>
+            <div class="imagem w-25 ratio-3x2" style="background-image: url('./img/galeria8.jpg');"></div>
         </div>
     </section>
-    <section class="planos text-center">
+    <section class="planos text-center py-100">
         <h2 class="h2">Planos</h2>
         <div class="container">
             <table class="w-100">
@@ -429,7 +429,7 @@
             </table>
         </div>
     </section>
-    <section class="blog">
+    <section class="blog py-100">
         <h2 class="h2 text-center">
             Blog
         </h2>
@@ -472,7 +472,7 @@
             </div>
         </div>
     </section>
-    <section class="dados text-center scroll-mt" id="contato">
+    <section class="dados text-center scroll-mt py-100" id="contato">
         <div class="container d-flex column-gap-3">
             <div>
                 <i class="fa-solid fa-location-dot mb-1 fs-4"></i>
@@ -501,7 +501,7 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.229927680017!2d-49.499249282332805!3d-21.34395929889062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be7842c03e66a9%3A0x8d155d03963056d8!2sAv.%20Tirso%20Martins%2C%20471%2C%20Sales%20-%20SP%2C%2014980-000!5e0!3m2!1spt-BR!2sbr!4v1737590703215!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             class="w-100"></iframe>
-        <div class="dados text-white p-3 d-flex align-items-center bg-warning">
+        <div class="dados text-white p-3 d-flex align-items-center bg-warning position-absolute z-2">
             Rua Tirso Martins 471, Centro - Sales / SP
             <br>
             contato@dominioxpto.com
@@ -509,25 +509,25 @@
             (17) 3557-1234
         </div>
     </section>
-    <section class="call-to-action bg-warning text-white">
+    <section class="call-to-action bg-warning text-white py-100">
         <div class="container d-flex justify-content-between align-items-center">
             <h2 class="fw-light fs-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit
             </h2>
-            <a href="">Agendar</a>
+            <a href="" class="fs-2 d-inline-block text-uppercase text-decoration-none">Agendar</a>
         </div>
     </section>
-    <section class="formulario">
+    <section class="formulario py-100">
         <div class="container">
             <h2 class="text-center h2">
                 Fale conosco
             </h2>
             <form action="" class="d-block">
-                <input type="text" name="" id="" placeholder="Nome">
-                <input type="email" name="" id="" placeholder="E-mail">
-                <input type="number" name="" id="" placeholder="Telefone">
-                <textarea name="" id="" placeholder="Deixe sua mensagem aqui" rows="5"></textarea>
-                <button class="d-block">
+                <input type="text" name="" id="" placeholder="Nome" class="form-control mb-1 d-block w-100">
+                <input type="email" name="" id="" placeholder="E-mail" class="form-control mb-1 d-block w-100">
+                <input type="number" name="" id="" placeholder="Telefone" class="form-control mb-1 d-block w-100">
+                <textarea name="" id="" placeholder="Deixe sua mensagem aqui" rows="5" class="form-control mb-1 d-block w-100"></textarea>
+                <button class="btn btn-success d-block w-100 fs-2">
                     ENVIAR
                 </button>
             </form>
@@ -591,8 +591,8 @@
                     Newsletter
                 </h3>
                 <form action="">
-                    <input type="email" name="" id="" placeholder="E-mail">
-                    <button>
+                    <input type="email" name="" id="" placeholder="E-mail" class="d-block w-100 border-none">
+                    <button class="d-inline-block">
                         Inscrever
                     </button>
                 </form>

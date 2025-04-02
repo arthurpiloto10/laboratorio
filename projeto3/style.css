@@ -6,25 +6,16 @@
     transition: all 0.5s;
 }
 
-img {
-    max-width: 100%;
-}
-
-.container {
-    width: 1200px;
-    margin: 0 auto;
-}
-
 header .menu>li>a {
     text-decoration: none;
-    color: #202020;
+    color: var(--dark);
     padding: 35px 0;
     border-top: 5px solid #fff;
     display: inline-block;
 }
 
 header .menu>li>a:hover {
-    border-top: 5px solid #e0450c;
+    border-top: 5px solid var(--warning);
 }
 
 header .menu>li>ul {
@@ -37,13 +28,13 @@ header .menu>li:hover>ul {
 
 header .menu>li>ul a {
     text-decoration: none;
-    color: #202020;
+    color: var(--dark);
     display: inline-block;
     padding: 10px 15px;
 }
 
 header .menu>li>ul a:hover {
-    background-color: #e0450c;
+    background-color: var(--warning);
     color: #fff;
 }
 
@@ -52,8 +43,6 @@ header .menu>li>ul a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .hero h2 {
@@ -67,31 +56,13 @@ header .menu>li>ul a:hover {
     border-bottom-right-radius: 30px;
 }
 
-.hero input {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    border: none;
-    margin-top: 10px;
-}
-
 .hero button {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    border: none;
-    background-color: #202020;
-    color: rgb(255, 255, 255);
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 1px;
 }
 
 .hero button:hover {
     background-color: #fff;
-    color: #202020;
+    color: var(--dark);
 }
 
 .hero h4 {
@@ -104,10 +75,6 @@ header .menu>li>ul a:hover {
 
 .servicos .d-flex>div {
     flex: 1;
-}
-
-.servicos {
-    padding: 100px 0;
 }
 
 .capa {
@@ -128,7 +95,7 @@ header .menu>li>ul a:hover {
 }
 
 .servicos h3 {
-    color: #e0450c;
+    color: var(--warning);
 }
 
 .servicos p {
@@ -136,19 +103,19 @@ header .menu>li>ul a:hover {
 }
 
 .servicos a {
-    color: #202020;
+    color: var(--dark);
 }
 
 .servicos a>span:first-child {
     display: inline-block;
     padding: 2px 7.5px;
-    background-color: #619237;
+    background-color: var(--success);
     color: #fff;
     margin-right: 5px;
 }
 
 .servicos a:hover>span:first-child {
-    background-color: #e0450c;
+    background-color: var(--warning);
     border-radius: 50%;
 }
 
@@ -157,8 +124,7 @@ header .menu>li>ul a:hover {
 }
 
 .sobre {
-    background-color: #619237;
-    padding: 100px 0px;
+    background-color: var(--success);
 }
 
 .sobre p {
@@ -179,10 +145,6 @@ header .menu>li>ul a:hover {
     margin-bottom: 15px;
 }
 
-.produtos {
-    padding: 100px 0px;
-}
-
 .produtos .imagem {
     aspect-ratio: 1/1;
 }
@@ -192,23 +154,38 @@ header .menu>li>ul a:hover {
 }
 
 .produtos h3 {
-    color: #202020;
+    color: var(--dark);
+}
+
+.btn1 {
+    display: inline-block;
+    padding: 2px 7.5px;
+    background-color: var(--success);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn1:hover {
+    background-color: var(--warning);
+    border-radius: 10px;
 }
 
 .contato iframe {
     height: 500px;
 }
 
+.dados {
+    background-color: var(--warning);
+}
+
 .contato .dados {
-    position: absolute;
     top: 5px;
     left: 5px;
     bottom: 5px;
-    background-color: #619237;
+    background-color: var(--success);
     line-height: 30px;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    z-index: 2;
 }
 
 .contato .dados:hover {
@@ -216,11 +193,6 @@ header .menu>li>ul a:hover {
     border-bottom-right-radius: 0px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
-}
-
-.numeros {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .numeros i {
@@ -235,11 +207,6 @@ header .menu>li>ul a:hover {
     bottom: 10%;
     width: 1px;
     background-color: rgba(255, 255, 255, 0.25);
-}
-
-.marcas-atendidas {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .marcas-atendidas .logo {
@@ -265,32 +232,21 @@ header .menu>li>ul a:hover {
 
 
 .depoimentos {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color: #619237;
+    background-color: var(--success);
 }
 
 .depoimentos .d-flex>iframe {
     width: 33.33%;
-    aspect-ratio: 3/2;
 }
 
 .galeria {
-    padding-top: 100px;
-    padding-bottom: 100px;
     background-color: rgba(0, 0, 0, 0.025);
 }
 
 .galeria .imagem {
-    aspect-ratio: 3/2;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.planos {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .planos table {
@@ -302,7 +258,7 @@ header .menu>li>ul a:hover {
 }
 
 .planos table tr:first-child td:nth-child(3) {
-    background-color: #e0450c;
+    background-color: var(--warning);
     color: #fff;
 }
 
@@ -326,7 +282,7 @@ header .menu>li>ul a:hover {
 }
 
 .planos table tr:nth-child(2) td:nth-child(n+2) {
-    background-color: #619237;
+    background-color: var(--success);
     color: #fff;
 }
 
@@ -339,25 +295,20 @@ header .menu>li>ul a:hover {
 }
 
 .planos a {
-    background-color: #e0450c;
+    background-color: var(--warning);
     color: #fff;
     padding: 12.5px;
     border-radius: 10px;
-    border: 2px solid #e0450c
+    border: 2px solid var(--warning);
 }
 
 .planos a:hover {
     background-color: #fff;
-    color: #e0450c;
-}
-
-.blog {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    color: var(--warning);
 }
 
 .blog h3 {
-    color: #202020;
+    color: var(--dark);
 }
 
 .blog p {
@@ -365,12 +316,7 @@ header .menu>li>ul a:hover {
 }
 
 .blog a {
-    color: #e0450c;
-}
-
-.dados {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    color: var(--warning);
 }
 
 .dados .d-flex>div {
@@ -385,67 +331,29 @@ header .menu>li>ul a:hover {
     line-height: 30px;
 }
 
-.call-to-action {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
 .call-to-action a {
-    display: inline-block;
     padding: 15px 90px;
     border: 3px solid rgba(255, 255, 255, 0.25);
     color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
     letter-spacing: 2px;
     border-radius: 10px;
 }
 
 .call-to-action a:hover {
     background-color: #fff;
-    color: #e0450c;
-}
-
-.formulario {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    color: var(--warning);
 }
 
 .formulario form {
     padding: 0 12.5%;
 }
 
-.formulario input,
-.formulario textarea,
 .formulario button {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 15px;
-}
-
-.formulario input,
-.formulario textarea {
-    border: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.formulario button {
-    background-color: #619237;
-    color: #fff;
-    border: 2px solid #619237;
-    border-radius: 10px;
-    font-size: 20px;
     letter-spacing: 2px;
 }
 
-.formulario button:hover {
-    background-color: #fff;
-    color: #619237;
-}
-
 footer {
-    background-color: #202020;
+    background-color: var(--dark);
     padding: 50px 0;
 }
 
@@ -455,7 +363,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #e0450c;
+    color: var(--warning);
 }
 
 footer .container:first-child ul>li:not(:last-child) {
@@ -463,25 +371,21 @@ footer .container:first-child ul>li:not(:last-child) {
 }
 
 footer input {
-    display: block;
-    width: 100%;
     padding: 15px;
-    border: none;
 }
 
 footer button {
-    display: inline-block;
-    background-color: #619237;
+    background-color: var(--success);
     color: #fff;
     padding: 10px 30px;
     border-radius: 10px;
-    border: 2px solid #619237;
+    border: 2px solid var(--success);
     margin-top: 15px;
 }
 
 footer button:hover {
     background-color: #fff;
-    color: #619237;
+    color: var(--success);
 }
 
 footer .container:last-child {
