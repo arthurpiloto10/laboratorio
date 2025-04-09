@@ -6,6 +6,26 @@
     transition: all 0.5s;
 }
 
+@media(max-width: 991px) {
+    header {
+        padding: 15px 0;
+    }
+}
+
+@media(min-width: 992px) {
+    header {
+        position: sticky;
+    }
+}
+
+@media(max-width: 991px) {
+    header .menu {
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+}
+
 header .menu>li>a {
     text-decoration: none;
     color: var(--dark);
@@ -14,16 +34,27 @@ header .menu>li>a {
     display: inline-block;
 }
 
-header .menu>li>a:hover {
-    border-top: 5px solid var(--warning);
+@media(max-width: 991px) {
+    header .menu>li>a {
+        padding: 10px 0;
+        border-top: none;
+    }
+}
+
+@media(min-width: 992px) {
+    header .menu>li>a:hover {
+        border-top: 5px solid var(--warning);
+    }
 }
 
 header .menu>li>ul {
     top: 85px;
 }
 
-header .menu>li:hover>ul {
-    display: block;
+@media(min-width: 992px) {
+    header .menu>li:hover>ul {
+        display: block;
+    }
 }
 
 header .menu>li>ul a {
@@ -54,6 +85,13 @@ header .menu>li>ul a:hover {
     width: 375px;
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
+}
+
+@media(max-width: 991px) {
+    .hero form {
+        margin: 0 auto;
+        margin-top: 50px;
+    }
 }
 
 .hero button {
@@ -136,7 +174,7 @@ header .menu>li>ul a:hover {
     padding-right: 50px;
 }
 
-.sobre .d-flex div .item {
+.sobre .d-lg-flex div .item {
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 20px 30px;
 }
