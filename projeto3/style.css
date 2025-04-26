@@ -144,6 +144,12 @@ header .menu>li>ul a:hover {
     color: var(--dark);
 }
 
+@media(max-width:991px) {
+    .servicos .container>div:not(:last-child)>a {
+        margin-bottom: 30px;
+    }
+}
+
 .servicos a>span:first-child {
     display: inline-block;
     padding: 2px 7.5px;
@@ -169,9 +175,10 @@ header .menu>li>ul a:hover {
     line-height: 22.5px;
 }
 
-
-.sobre .d-flex div:first-child {
-    padding-right: 50px;
+@media(min-width:992px) {
+    .sobre .d-lg-flex div:first-child {
+        padding-right: 50px;
+    }
 }
 
 .sobre .d-lg-flex div .item {
@@ -193,6 +200,12 @@ header .menu>li>ul a:hover {
 
 .produtos h3 {
     color: var(--dark);
+}
+
+@media(max-width:991px) {
+    .produtos .container>div:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }
 
 .btn1 {
@@ -237,14 +250,16 @@ header .menu>li>ul a:hover {
     color: rgb(255, 255, 255, 0.5);
 }
 
-.numeros .container>div:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 10%;
-    right: 0;
-    bottom: 10%;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.25);
+@media(min-width:992px) {
+    .numeros .container>div:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: 0;
+        bottom: 10%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
 }
 
 .marcas-atendidas .logo {
@@ -273,8 +288,23 @@ header .menu>li>ul a:hover {
     background-color: var(--success);
 }
 
-.depoimentos .d-flex>iframe {
-    width: 33.33%;
+@media(min-width:992px) {
+    .depoimentos .d-lg-flex>iframe {
+        width: 33.33%;
+    }
+}
+
+@media(max-width:991px) {
+    .depoimentos iframe {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media(max-width:991px) {
+    .depoimentos .container > iframe:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }
 
 .galeria {
