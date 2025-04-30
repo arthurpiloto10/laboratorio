@@ -145,7 +145,7 @@ header .menu>li>ul a:hover {
 }
 
 @media(max-width:991px) {
-    .servicos .container>div:not(:last-child)>a {
+    .servicos .container>div:not(:last-child) {
         margin-bottom: 30px;
     }
 }
@@ -227,6 +227,10 @@ header .menu>li>ul a:hover {
 
 .dados {
     background-color: var(--warning);
+}
+
+.dados .container > div:not(:last-child) {
+    margin-bottom: 30px;
 }
 
 .contato .dados {
@@ -387,6 +391,10 @@ header .menu>li>ul a:hover {
     color: var(--warning);
 }
 
+.blog .container > div:not(:last-child) {
+    margin-bottom: 30px;
+}
+
 .dados .d-flex>div {
     width: 33.33%;
 }
@@ -410,6 +418,12 @@ header .menu>li>ul a:hover {
 .call-to-action a:hover {
     background-color: #fff;
     color: var(--warning);
+}
+
+@media(max-width: 991px) {
+    .call-to-action h2 {
+        margin-bottom: 30px;
+    }
 }
 
 .formulario form {
@@ -468,4 +482,10 @@ footer .container:last-child li {
 
 footer .container:last-child ul>li:not(:last-child) {
     margin-right: 10px;
+}
+
+@media(max-width: 991px) {
+    footer .container > div:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }
