@@ -55,6 +55,12 @@
     display: none;
 }
 
+@media(min-width: 992px) {
+    .d-lg-none {
+        display: none;
+    }
+}
+
 .d-flex {
     display: flex;
 }
@@ -363,4 +369,39 @@
 
 .ratio-3x2 {
     aspect-ratio: 3/2;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up {
+    transform: translateY(20px);
+}
+
+.fade-down {
+    transform: translateY(-20px);
+}
+
+.fade-left {
+    transform: translateX(-20px);
+}
+
+.fade-right {
+    transform: translateX(20px);
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
 }

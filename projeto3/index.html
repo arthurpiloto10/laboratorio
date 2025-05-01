@@ -20,15 +20,18 @@
 <body>
     <header class="bg-white top-0 z-3 shadow">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="text-success">
-                Company name
-            </h1>
-            <ul class="menu d-lg-flex list-unstyled column-gap-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="text-success">
+                    Company name
+                </h1>
+                <i class="fa-solid fa-bars d-lg-none cursor-pointer" id="hamburguer"></i>
+            </div>
+            <ul class="menu d-none d-lg-flex list-unstyled column-gap-3" id="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li class="position-relative"><a href="#produtos">Produtos <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="bg-white list-unstyled d-none position-absolute start-0 border-start border-warning">
+                <li class="position-relative" id="sub-menu"><a>Produtos <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="bg-white list-unstyled d-none position-lg-absolute start-0 border-start border-warning" id="menu-categoria">
                         <li>
                             <a href="">Categoria&nbsp;A</a>
                         </li>
@@ -75,7 +78,7 @@
             Serviços
         </h2>
         <div class="container d-lg-flex column-gap-3">
-            <div>
+            <div class="fade-left" data-delay="0.1s">
                 <div class="capa shadow" style="background-image: url('./img/servico-de-corte-e-manutencao.png');">
                 </div>
                 <h3 class="fs-3 mt-3 fw-normal">
@@ -96,7 +99,7 @@
                     </span>
                 </a>
             </div>
-            <div>
+            <div class="fade-left" data-delay="0.5s">
                 <div class="capa shadow"
                     style="background-image: url('./img/servico-de-adubacao-e-fertilizacao.webp');"></div>
                 <h3 class="fs-3 mt-3 fw-normal">
@@ -118,7 +121,7 @@
                     </span>
                 </a>
             </div>
-            <div>
+            <div class="fade-left" data-delay="1s">
                 <div class="capa shadow" style="background-image: url('./img/servico-controle-de-pragas.jpg');"></div>
                 <h3 class="fs-3 mt-3 fw-normal">
                     Controle de pragas
