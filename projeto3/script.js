@@ -44,3 +44,35 @@ function aplicarAnimacoes() {
 
 document.addEventListener('DOMContentLoaded', aplicarAnimacoes);
 window.addEventListener('scroll', aplicarAnimacoes);
+
+window.fetch('http://127.0.0.1:5500/projeto3/produtos.json').then(resposta => resposta.json()).then(produtos => {
+    const listaProdutos = document.getElementById('lista-produtos');
+    let html = ``;
+    produtos.forEach(produto => {
+        html += `
+        <div class="card p-2 w-lg-25 fade-left">
+                <div class="imagem d-flex align-items-center justify-content-center">
+                    <img src="./img/${produto.imagem}" alt="${produto.nome}" class="img-fluid">
+                </div>
+                <h3 class="text-uppercase mt-1">
+                    ${produto.nome}
+                </h3>
+                <p class="mb-1 mt-1">
+                    ${produto.descricao}
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>
+                        R$
+                        <span class="text-success">
+                            ${produto.preco.toFixed(2).replace('.',',')}
+                        </span>
+                    </span>
+                    <a href="" class="btn1">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+    listaProdutos.innerHTML = html;
+})
