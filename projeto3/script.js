@@ -74,7 +74,7 @@ window
                             ${produto.preco.toFixed(2).replace(".", ",")}
                         </span>
                     </span>
-                    <a href="" class="btn1">
+                    <a onclick="adicionarProdutoAoCarrinho(${produto.id}, '${produto.nome}', './img/${produto.imagem}', ${produto.preco})" class="btn1">
                         <i class="fa-solid fa-plus"></i>
                     </a>
                 </div>
