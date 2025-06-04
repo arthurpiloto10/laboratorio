@@ -30,8 +30,10 @@
                 <li class="fade-left" data-delay="0.1s"><a href="#home">Home</a></li>
                 <li class="fade-left" data-delay="0.2s"><a href="#sobre">Sobre</a></li>
                 <li class="fade-left" data-delay="0.3s"><a href="#servicos">Serviços</a></li>
-                <li class="position-relative fade-left" data-delay="0.4s" id="sub-menu"><a>Produtos <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="bg-white list-unstyled d-none position-lg-absolute start-0 border-start border-warning" id="menu-categoria">
+                <li class="position-relative fade-left" data-delay="0.4s" id="sub-menu"><a>Produtos <i
+                            class="fa-solid fa-angle-down"></i></a>
+                    <ul class="bg-white list-unstyled d-none position-lg-absolute start-0 border-start border-warning"
+                        id="menu-categoria">
                         <li>
                             <a href="">Categoria&nbsp;A</a>
                         </li>
@@ -44,10 +46,11 @@
                 <li class="fade-left" data-delay="0.6s">
                     <a href="carrinho.html" class="position-relative">
                         <i class="fa-solid fa-cart-shopping"></i>
-                <span class="position-absolute top-15 bg-warning text-white px-1 rounded-1">
-                    0
-                </span>
-                </a></li>
+                        <span class="position-absolute top-15 bg-warning text-white px-1 rounded-1">
+                            0
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
@@ -61,43 +64,18 @@
     <section>
         <div class="container">
             <table class="table mb-5">
-                <tr>
-                    <th class="text-start">Produto</th>
-                    <th class="text-center">Quantidade</th>
-                    <th class="text-center">Preço</th>
-                    <th class="text-center">Total</th>
-                    <th class="text-center"></th>
-                </tr>
-                <tr>
-                    <td class="d-flex align-items-center">
-                        <img src="./img/borrifador.webp" alt="Borrifador" style="width: 75px;">
-                        <span>
-                            Borrifador
-                        </span>
-                    </td>
-                    <td class="text-center">
-                        <button class="btn">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <button class="btn">
-                            1
-                        </button>
-                        <button class="btn">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </td>
-                    <td class="text-center">
-                        R$ 19,90
-                    </td>
-                    <td class="text-center">
-                        R$ 19,90
-                    </td>
-                    <td class="text-center">
-                        <button class="btn btn-warning">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th class="text-start">Produto</th>
+                        <th class="text-center">Quantidade</th>
+                        <th class="text-center">Preço</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-carrinho">
+                    
+                </tbody>
             </table>
         </div>
     </section>
@@ -187,7 +165,8 @@
             </ul>
         </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/carrinho.js"></script>
 </body>
 
 </html>

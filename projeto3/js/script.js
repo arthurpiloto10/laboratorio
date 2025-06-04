@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", aplicarAnimacoes);
 window.addEventListener("scroll", aplicarAnimacoes);
 
 window
-  .fetch("http://127.0.0.1:5500/projeto3/produtos.json")
+  .fetch("http://127.0.0.1:5500/projeto3/js/produtos.json")
   .then((resposta) => resposta.json())
   .then((produtos) => {
     const listaProdutos = document.getElementById("lista-produtos");
@@ -74,7 +74,9 @@ window
                             ${produto.preco.toFixed(2).replace(".", ",")}
                         </span>
                     </span>
-                    <a onclick="adicionarProdutoAoCarrinho(${produto.id}, '${produto.nome}', './img/${produto.imagem}', ${produto.preco})" class="btn1">
+                    <a onclick="adicionarProdutoAoCarrinho(${produto.id}, '${
+        produto.nome
+      }', '${produto.imagem}', ${produto.preco})" class="btn1">
                         <i class="fa-solid fa-plus"></i>
                     </a>
                 </div>
@@ -94,5 +96,17 @@ function adicionarProdutoAoCarrinho(p_id, p_nome, p_imagem, p_preco) {
     quantidade: 1,
   };
   carrinho.push(novoProduto);
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarContadorDeProdutosNoCarrinho();
+}
+
+function contadorDeProdutosNoCarrinho() {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let contador = 0;
+    carrinho.forEach((produto) => (contador += produto.quantidade));
+    return contador;
+}
+
+function atualizarContadorDeProdutosNoCarrinho() {
+    document.getElementById('carrinho-quantidade').textContent = contadorDeProdutosNoCarrinho();
 }
