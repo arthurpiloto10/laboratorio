@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         </span>
                     </td>
                     <td class="text-center">
-                        <button class="btn">
+                        <button class="btn" onclick="diminuiQuantidadeDoProdutoNoCarrinho(${produto.id})">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                         <button class="btn">
-                            1
+                            ${produto.quantidade}
                         </button>
-                        <button class="btn">
+                        <button class="btn" onclick="aumentaQuantidadeDoProdutoNoCarrinho(${produto.id})">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </td>
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         R$ ${produto.preco.toFixed(2).replace('.', ',')}
                     </td>
                     <td class="text-center">
-                        <button class="btn btn-warning">
+                        <button class="btn btn-warning" onclick="removerProdutoDoCarrinho(${produto.id})">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </td>
@@ -43,3 +43,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   corpoCarrinho.innerHTML = html;
 });
+
+
+function aumentaQuantidadeDoProdutoNoCarrinho(id) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let produto = carrinho.find(produto => produto.id === id);
+    if (produto) {
+        produto.quantidade += 1;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+    location.reload();
+}
+
+function diminuiQuantidadeDoProdutoNoCarrinho(id) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let produto = carrinho.find(produto => produto.id === id);
+    if (produto && produto.quantidade > 1) {
+        produto.quantidade -= 1;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+    location.reload();
+}
+
+function removerProdutoDoCarrinho(id) {
+    let confimacao = window.confirm("Deseja realmente excluir o produto do carrinho?");
+    if (confimacao) {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho = carrinho.filter(produto => produto.id !== id);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        location.reload();
+    }
+}
