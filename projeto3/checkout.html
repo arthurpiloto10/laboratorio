@@ -57,29 +57,23 @@
     <section class="py-50">
         <div class="container">
             <h2>
-                Carrinho
+                Checkout
             </h2>
         </div>
     </section>
     <section>
-        <div class="container">
-            <table class="table mb-3">
-                <thead>
-                    <tr>
-                        <th class="text-start">Produto</th>
-                        <th class="text-center">Quantidade</th>
-                        <th class="text-center">Preço</th>
-                        <th class="text-center">Total</th>
-                        <th class="text-center"></th>
-                    </tr>
-                </thead>
-                <tbody id="corpo-carrinho">
-                    
-                </tbody>
-            </table>
-            <div class="mb-5">
-                <a href="checkout.html" class="btn btn-success">Ir para Checkout</a>
-            </div>
+        <div class="container mb-5">
+           <form method="post" action="registrar-pedido.html" class="d-block" id="formulario-pedido">
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-1 d-block w-100 fade-down"
+                    data-delay="0.1s" required>
+                <input type="email" name="email" id="email" placeholder="E-mail" class="form-control mb-1 d-block w-100 fade-down"
+                    data-delay="0.2s" required>
+                <input type="number" name="telefone" id="telefone" placeholder="Telefone"
+                    class="form-control mb-1 d-block w-100 fade-down" data-delay="0.3s" required>
+                <button type="submit" class="btn btn-success d-block w-100 fs-2 fade-down" data-delay="0.5s">
+                    ENVIAR PEDIDO
+                </button>
+            </form>
         </div>
     </section>
 
@@ -169,7 +163,7 @@
         </div>
     </footer>
     <script src="./js/script.js"></script>
-    <script src="./js/carrinho.js"></script>
+    <script src="./js/checkout.js"></script>
 </body>
 
 </html>
