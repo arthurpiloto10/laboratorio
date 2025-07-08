@@ -1,10 +1,30 @@
-document.getElementById("hamburguer").addEventListener("click", () => {
-  document.getElementById("menu").classList.toggle("d-none");
-});
+fetch("./includes/header.html")
+  .then((resposta) => {
+    if (!resposta.ok) {
+      throw new Error("Erro ao carregar arquivo");
+    }
+    return resposta.text();
+  })
+  .then((html) => {
+    document.getElementById("header").innerHTML = html;
+  })
+  .catch((erro) => {
+    console.error(erro);
+  });
 
-document.getElementById("sub-menu").addEventListener("click", () => {
-  document.getElementById("menu-categoria").classList.toggle("d-none");
-});
+fetch("./includes/footer.html")
+  .then((resposta) => {
+    if (!resposta.ok) {
+      throw new Error("Erro ao carregar arquivo");
+    }
+    return resposta.text();
+  })
+  .then((html) => {
+    document.getElementById("footer").innerHTML = html;
+  })
+  .catch((erro) => {
+    console.error(erro);
+  });
 
 function estaVisivel(elemento) {
   const posicao = elemento.getBoundingClientRect();
@@ -27,16 +47,9 @@ function aplicarAnimacoes() {
 document.addEventListener("DOMContentLoaded", aplicarAnimacoes);
 window.addEventListener("scroll", aplicarAnimacoes);
 
-
 function contadorDeProdutosNoCarrinho() {
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    let contador = 0;
-    carrinho.forEach((produto) => (contador += produto.quantidade));
-    return contador;
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  let contador = 0;
+  carrinho.forEach((produto) => (contador += produto.quantidade));
+  return contador;
 }
-
-async function atualizarContadorDeProdutosNoCarrinho() {
-    document.getElementById('carrinho-quantidade').textContent = await contadorDeProdutosNoCarrinho();
-}
-
-document.addEventListener("DOMContentLoaded", atualizarContadorDeProdutosNoCarrinho);

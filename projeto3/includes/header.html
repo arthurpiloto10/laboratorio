@@ -1,0 +1,49 @@
+<div class="container d-lg-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="text-success -fade-left">
+            Company name
+        </h1>
+        <i class="fa-solid fa-bars d-lg-none cursor-pointer" id="hamburguer"></i>
+    </div>
+    <ul class="menu d-none d-lg-flex list-unstyled column-gap-3" id="menu">
+        <li class="-fade-left" data-delay="0.1s"><a href="#home">Home</a></li>
+        <li class="-fade-left" data-delay="0.2s"><a href="#sobre">Sobre</a></li>
+        <li class="-fade-left" data-delay="0.3s"><a href="#servicos">Serviços</a></li>
+        <li class="position-relative -fade-left" data-delay="0.4s" id="sub-menu"><a>Produtos <i
+                    class="fa-solid fa-angle-down"></i></a>
+            <ul class="bg-white list-unstyled d-none position-lg-absolute start-0 border-start border-warning"
+                id="menu-categoria">
+                <li>
+                    <a href="">Categoria&nbsp;A</a>
+                </li>
+                <li>
+                    <a href="">Categoria&nbsp;B</a>
+                </li>
+            </ul>
+        </li>
+        <li class="-fade-left" data-delay="0.5s"><a href="#contato">Contato</a></li>
+        <li class="-fade-left" data-delay="0.6s">
+            <a href="carrinho.html" class="position-relative">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="position-absolute top-15 bg-warning text-white px-1 rounded-1" id="carrinho-quantidade">
+                    0
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+    document.getElementById("hamburguer").addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("d-none");
+    });
+
+    document.getElementById("sub-menu").addEventListener("click", () => {
+        document.getElementById("menu-categoria").classList.toggle("d-none");
+    });
+
+    async function atualizarContadorDeProdutosNoCarrinho() {
+        document.getElementById('carrinho-quantidade').textContent = await contadorDeProdutosNoCarrinho();
+    }
+
+    document.addEventListener("DOMContentLoaded", atualizarContadorDeProdutosNoCarrinho);
+</script>

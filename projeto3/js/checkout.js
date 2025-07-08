@@ -31,6 +31,7 @@ document
     // window.location.href = `https://wa.me/${numeroWhatsapp}?text=${mensagemCodificada}`;
     window.open(`https://wa.me/${numeroWhatsapp}?text=${mensagemCodificada}`, '_blank');
     localStorage.removeItem('carrinho');  
-    this.reset();
-    atualizarContadorDeProdutosNoCarrinho();
+    //this.reset();
+    //atualizarContadorDeProdutosNoCarrinho();
+    window.location.href = './obrigado.html';
   });

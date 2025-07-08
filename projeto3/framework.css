@@ -49,6 +49,10 @@
     }
 }
 
+.text-end {
+    text-align: right;
+}
+
 @media(min-width: 992px) {
     .text-lg-end {
         text-align: right;
