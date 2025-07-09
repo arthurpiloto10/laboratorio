@@ -1,17 +1,3 @@
-fetch("./includes/header.html")
-  .then((resposta) => {
-    if (!resposta.ok) {
-      throw new Error("Erro ao carregar arquivo");
-    }
-    return resposta.text();
-  })
-  .then((html) => {
-    document.getElementById("header").innerHTML = html;
-  })
-  .catch((erro) => {
-    console.error(erro);
-  });
-
 fetch("./includes/footer.html")
   .then((resposta) => {
     if (!resposta.ok) {
@@ -53,3 +39,42 @@ function contadorDeProdutosNoCarrinho() {
   carrinho.forEach((produto) => (contador += produto.quantidade));
   return contador;
 }
+
+function atualizarContadorDeProdutosNoCarrinho() {
+  let elementoContador = document.getElementById("carrinho-quantidade");
+  if (elementoContador) {
+    elementoContador.textContent = contadorDeProdutosNoCarrinho();
+  }
+}
+
+function inicializaHeader() {
+  document.getElementById("hamburguer").addEventListener("click", () => {
+    document.getElementById("menu").classList.toggle("d-none");
+  });
+
+  document.getElementById("sub-menu").addEventListener("click", () => {
+    document.getElementById("menu-categoria").classList.toggle("d-none");
+  });
+  atualizarContadorDeProdutosNoCarrinho();
+}
+
+function carregarHeader() {
+  fetch("./includes/header.html")
+    .then((resposta) => {
+      if (!resposta.ok) {
+        throw new Error("Erro ao carregar arquivo");
+      }
+      return resposta.text();
+    })
+    .then((html) => {
+      document.getElementById("header").innerHTML = html;
+      inicializaHeader();
+    })
+    .catch((erro) => {
+      console.error(erro);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  carregarHeader();
+});

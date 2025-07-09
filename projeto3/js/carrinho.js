@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     corpoCarrinho.innerHTML =
       '<tr><td class="text-center" colspan="5">Carrinho Vazio</td></tr>';
     return;
+  } else {
+    document.getElementById('carrinho-div-checkout').style.display = 'block';
   }
   let html = "";
   carrinho.forEach((produto) => {
@@ -122,3 +124,5 @@ function removerProdutoDoCarrinho(id) {
     }
   }
 }
+
+

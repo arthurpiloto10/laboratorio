@@ -229,7 +229,7 @@ header .menu>li>ul a:hover {
 }
 
 .dados {
-    background-color: var(--warning);
+    background-color: var(--success);
 }
 
 .dados .container > div:not(:last-child) {
