@@ -38,14 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         </button>
                     </td>
                     <td class="text-center">
-                        R$ ${produto.preco.toFixed(2).replace(".", ",")}
+                        R$ ${produto.preco.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}
                     </td>
                     <td class="text-center">
                         R$ 
                         <span id="total-produto-${produto.id}">
                         ${(produto.preco * produto.quantidade)
-                          .toFixed(2)
-                          .replace(".", ",")}
+                          .toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}
                           </span>
                     </td>
                     <td class="text-center">

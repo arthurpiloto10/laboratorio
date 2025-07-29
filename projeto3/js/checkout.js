@@ -1,3 +1,40 @@
+document.addEventListener("DOMContentLoaded", () => {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  let itens = document.getElementById("itens");
+  let total = 0;
+  if (carrinho.length === 0) {
+    itens.innerHTML =
+      '<tr><td class="text-center" colspan="3">Carrinho Vazio</td></tr>';
+    return;
+  }
+  
+  let html = "";
+  carrinho.forEach((produto) => {
+    total += produto.preco * produto.quantidade;
+    html += `
+    <tr>
+                    <td>
+                            ${produto.nome}
+                    </td>
+                    <td class="text-center">
+                            ${produto.quantidade}
+                    </td>
+                    <td class="text-center">
+                        R$ 
+                        <span id="total-produto-${produto.id}">
+                        ${(produto.preco * produto.quantidade)
+                          .toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}
+                          </span>
+                    </td>
+                </tr>
+    `;
+  });
+  itens.innerHTML = html;
+
+  document.getElementById('total').textContent = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+});
+
+
 document
   .getElementById("formulario-pedido")
   .addEventListener("submit", function (evento) {

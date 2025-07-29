@@ -29,17 +29,51 @@
     </section>
     <section>
         <div class="container mb-5">
-           <form method="post" action="registrar-pedido.html" class="d-block mb-3" id="formulario-pedido">
-                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-1 d-block w-100 fade-down"
-                    data-delay="0.1s" required>
-                <input type="email" name="email" id="email" placeholder="E-mail" class="form-control mb-1 d-block w-100 fade-down"
-                    data-delay="0.2s" required>
-                <input type="number" name="telefone" id="telefone" placeholder="Telefone"
-                    class="form-control mb-1 d-block w-100 fade-down" data-delay="0.3s" required>
-                <button type="submit" class="btn btn-dark d-block w-100 fs-2 fade-down" data-delay="0.5s">
-                    ENVIAR PEDIDO
-                </button>
-            </form>
+            <div class="d-lg-flex justify-content-between column-gap-3">
+                <div class="w-lg-50">
+                    <table class="table mb-3">
+                        <thead>
+                            <tr>
+                                <th class="text-start">
+                                    Item
+                                </th>
+                                <th>
+                                    Quantidade
+                                </th>
+                                <th>
+                                    Valor
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="itens">
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    Total
+                                </td>
+                                <td id="total" class="text-center">
+
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="w-lg-50">
+                    <form method="post" action="registrar-pedido.html" class="d-block mb-3" id="formulario-pedido">
+                        <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-1 d-block w-100 fade-down"
+                        data-delay="0.1s" required>
+                        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control mb-1 d-block w-100 fade-down"
+                        data-delay="0.2s" required>
+                        <input type="number" name="telefone" id="telefone" placeholder="Telefone"
+                        class="form-control mb-1 d-block w-100 fade-down" data-delay="0.3s" required>
+                        <button type="submit" class="btn btn-dark d-block w-100 fs-2 fade-down" data-delay="0.5s">
+                            ENVIAR PEDIDO
+                        </button>
+                    </form>
+                </div>
+            </div>
             <div>
                 <a href="./carrinho.html" class="btn btn-success"><i class="fa-solid fa-arrow-left"></i> &nbsp;Voltar para o carrinho</a>
             </div>
