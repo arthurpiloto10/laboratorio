@@ -20,9 +20,9 @@
 <body>
     <header class="bg-white top-0 z-3 shadow" id="header">
     </header>
-    <section class="py-50">
+    <section class="py-50 bg-light mb-3">
         <div class="container">
-            <h2>
+            <h2 class="fade-left fw-normal">
                 Checkout
             </h2>
         </div>
@@ -31,7 +31,7 @@
         <div class="container mb-5">
             <div class="d-lg-flex justify-content-between column-gap-3">
                 <div class="w-lg-50">
-                    <table class="table mb-3">
+                    <table class="table mb-3 fade-left" data-delay="0.1s">
                         <thead>
                             <tr>
                                 <th class="text-start">
@@ -62,19 +62,19 @@
                 </div>
                 <div class="w-lg-50">
                     <form method="post" action="registrar-pedido.html" class="d-block mb-3" id="formulario-pedido">
-                        <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-1 d-block w-100 fade-down"
+                        <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-1 d-block w-100 fade-right"
                         data-delay="0.1s" required>
-                        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control mb-1 d-block w-100 fade-down"
+                        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control mb-1 d-block w-100 fade-right"
                         data-delay="0.2s" required>
                         <input type="number" name="telefone" id="telefone" placeholder="Telefone"
-                        class="form-control mb-1 d-block w-100 fade-down" data-delay="0.3s" required>
-                        <button type="submit" class="btn btn-dark d-block w-100 fs-2 fade-down" data-delay="0.5s">
+                        class="form-control mb-1 d-block w-100 fade-right" data-delay="0.3s" required>
+                        <button type="submit" class="btn btn-dark d-block w-100 fs-2 fade-right" data-delay="0.5s">
                             ENVIAR PEDIDO
                         </button>
                     </form>
                 </div>
             </div>
-            <div>
+            <div class="fade-right" data-delay="0.2s">
                 <a href="./carrinho.html" class="btn btn-success"><i class="fa-solid fa-arrow-left"></i> &nbsp;Voltar para o carrinho</a>
             </div>
         </div>
