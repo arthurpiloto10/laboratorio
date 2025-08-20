@@ -1,3 +1,9 @@
+window.fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
+.then((resposta) => resposta.json())
+.then((categorias) => {
+  console.log(categorias);
+});
+
 window
   .fetch("http://127.0.0.1:5500/projeto3/js/produtos.json")
   .then((resposta) => resposta.json())
@@ -6,7 +12,7 @@ window
     let html = ``;
     produtos.forEach((produto) => {
       html += `
-        <div class="card p-2 w-lg-25">
+        <div class="card p-2 w-lg-25" data-categoria="${produto.categoria_id}">
                 <div class="imagem d-flex align-items-center justify-content-center">
                     <img src="./img/${produto.imagem}" alt="${
         produto.nome
@@ -54,4 +60,22 @@ function adicionarProdutoAoCarrinho(p_id, p_nome, p_imagem, p_preco) {
   }
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   atualizarContadorDeProdutosNoCarrinho();
+}
+
+function mostrarTodosOsProdutos() {
+  const elementos = document.querySelectorAll("[data-categoria]");
+  elementos.forEach((elemento) => {
+    elemento.style.display = "block";
+  });
+}
+
+function mostrarProdutosPorCategoria(categoria_id) {
+  const elementos = document.querySelectorAll("[data-categoria]");
+  elementos.forEach((elemento) => {
+    if (elemento.getAttribute("data-categoria") == categoria_id) {
+      elemento.style.display = "block";
+    } else {
+      elemento.style.display = "none";
+    }
+  });
 }

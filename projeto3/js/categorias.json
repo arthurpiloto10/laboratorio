@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nome": "Categoria A"
+    },
+    {
+        "id":2,
+        "nome": "categoria B"
+    },
+    {
+        "id":3,
+        "nome": "Categoria C"
+    },
+    {
+        "id": 4,
+        "nome": "Categoria D"
+    }
+]
