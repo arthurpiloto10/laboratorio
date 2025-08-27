@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+  window
+  .fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
+  .then((resposta) => resposta.json())
+  .then((categorias) => {
+    let html = ``;
+    categorias.forEach((categoria) => {
+      html += `
+      <li>
+      <a href="">${categoria.nome}</a>
+      </li>
+      `;
+    });
+    document.getElementById("footer-categorias").innerHTML = html;
+  }).catch(erro => {
+    console.log(erro);
+  })
+  ;
+});
+
 fetch("./includes/footer.html")
   .then((resposta) => {
     if (!resposta.ok) {

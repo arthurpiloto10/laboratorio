@@ -492,3 +492,14 @@ footer .container:last-child ul>li:not(:last-child) {
         margin-bottom: 30px;
     }
 }
+
+.header-pagina-interna {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 50px 0;
+}
+
+.header-pagina-interna h2 {
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+}

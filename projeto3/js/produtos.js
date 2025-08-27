@@ -1,7 +1,16 @@
 window.fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
 .then((resposta) => resposta.json())
 .then((categorias) => {
-  console.log(categorias);
+  let html = ``;
+  categorias.forEach((categoria) => {
+    html += `
+    <a class="btn btn-success mb-3" onclick="mostrarProdutosPorCategoria(${categoria.id})">
+    ${categoria.nome}
+    </a>
+    `
+  });
+  // categorias.innerHTML = html;
+  document.getElementById('botoes-categorias').innerHTML += html;
 });
 
 window
