@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     categorias.forEach((categoria) => {
       html += `
       <li>
-      <a href="">${categoria.nome}</a>
+      <a href="./produtos.html?categoria=${categoria.id}">${categoria.nome}</a>
       </li>
       `;
     });

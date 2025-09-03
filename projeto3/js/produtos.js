@@ -1,56 +1,68 @@
-window.fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
-.then((resposta) => resposta.json())
-.then((categorias) => {
-  let html = ``;
-  categorias.forEach((categoria) => {
-    html += `
+window
+  .fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
+  .then((resposta) => resposta.json())
+  .then((categorias) => {
+    let html = ``;
+    categorias.forEach((categoria) => {
+      html += `
     <a class="btn btn-success mb-3" onclick="mostrarProdutosPorCategoria(${categoria.id})">
     ${categoria.nome}
     </a>
-    `
-  });
-  // categorias.innerHTML = html;
-  document.getElementById('botoes-categorias').innerHTML += html;
-});
-
-window
-  .fetch("http://127.0.0.1:5500/projeto3/js/produtos.json")
-  .then((resposta) => resposta.json())
-  .then((produtos) => {
-    const listaProdutos = document.getElementById("lista-produtos");
-    let html = ``;
-    produtos.forEach((produto) => {
-      html += `
-        <div class="card p-2 w-lg-25" data-categoria="${produto.categoria_id}">
-                <div class="imagem d-flex align-items-center justify-content-center">
-                    <img src="./img/${produto.imagem}" alt="${
-        produto.nome
-      }" class="img-fluid">
-                </div>
-                <h3 class="text-uppercase mt-1">
-                    ${produto.nome}
-                </h3>
-                <p class="mb-1 mt-1">
-                    ${produto.descricao}
-                </p>
-                <div class="d-flex justify-content-between">
-                    <span>
-                        R$
-                        <span class="text-success">
-                            ${produto.preco.toFixed(2).replace(".", ",")}
-                        </span>
-                    </span>
-                    <a onclick="adicionarProdutoAoCarrinho(${produto.id}, '${
-        produto.nome
-      }', '${produto.imagem}', ${produto.preco})" class="btn1">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        `;
+    `;
     });
-    listaProdutos.innerHTML = html;
+    // categorias.innerHTML = html;
+    document.getElementById("botoes-categorias").innerHTML += html;
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  window
+    .fetch("http://127.0.0.1:5500/projeto3/js/produtos.json")
+    .then((resposta) => resposta.json())
+    .then((produtos) => {
+      const parametros = new URLSearchParams(window.location.search);
+      console.log(parametros);
+      console.log(Object.fromEntries(parametros.entries()));
+      const categoriaParametro = parseInt(parametros.get("categoria")); 
+      const listaProdutos = document.getElementById("lista-produtos");
+      let html = ``;
+      produtos.forEach((produto) => {
+        if (categoriaParametro && produto.categoria_id !== categoriaParametro) {
+          console.log(categoriaParametro);
+          console.log(produto.categoria_id);
+          console.log("Entrou no if");
+        }
+        html += `
+      <div class="card p-2 w-lg-25" data-categoria="${produto.categoria_id}" style="${categoriaParametro && produto.categoria_id !== categoriaParametro ? 'display:none' : ''}">
+      <div class="imagem d-flex align-items-center justify-content-center">
+      <img src="./img/${produto.imagem}" alt="${
+          produto.nome
+        }" class="img-fluid">
+        </div>
+        <h3 class="text-uppercase mt-1">
+        ${produto.nome}
+        </h3>
+        <p class="mb-1 mt-1">
+        ${produto.descricao}
+        </p>
+        <div class="d-flex justify-content-between">
+        <span>
+        R$
+        <span class="text-success">
+        ${produto.preco.toFixed(2).replace(".", ",")}
+        </span>
+        </span>
+        <a onclick="adicionarProdutoAoCarrinho(${produto.id}, '${
+          produto.nome
+        }', '${produto.imagem}', ${produto.preco})" class="btn1">
+          <i class="fa-solid fa-plus"></i>
+          </a>
+          </div>
+          </div>
+          `;
+      });
+      listaProdutos.innerHTML = html;
+    });
+});
 
 function adicionarProdutoAoCarrinho(p_id, p_nome, p_imagem, p_preco) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
