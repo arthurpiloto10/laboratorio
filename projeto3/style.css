@@ -503,3 +503,11 @@ footer .container:last-child ul>li:not(:last-child) {
     font-weight: 300;
     text-transform: uppercase;
 }
+
+.lh-25 {
+    line-height: 25px;
+}
+
+.lh-3 {
+    line-height: 30px;
+}
