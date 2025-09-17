@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./framework.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/framework.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -296,44 +296,93 @@
     <section class="planos text-center py-100">
         <h2 class="h2 fade-down">Planos</h2>
         <div class="container">
-            <table class="w-100 fade-left">
-                <tr>
-                    <td class="p-1"></td>
-                    <td class="p-1">Standart</td>
-                    <td class="p-1">Premium</td>
-                    <td class="p-1">Business</td>
-                </tr>
-                <tr>
-                    <td class="p-1">Serviços</td>
-                    <td class="p-1">R$ 99,90</td>
-                    <td class="p-1">R$ 149,90</td>
-                    <td class="p-1">R$ 199,90</td>
-                </tr>
-                <tr>
-                    <td class="p-1">Serviço 1</td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                </tr>
-                <tr>
-                    <td class="p-1">Serviço 2</td>
-                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                </tr>
-                <tr>
-                    <td class="p-1">Serviço 3</td>
-                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
-                    <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
-                </tr>
-                <tr>
-                    <td class="p-1"></td>
-                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
-                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
-                    <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
-                </tr>
-            </table>
+            <div class="d-none d-lg-block">
+                <table class="w-100 fade-left">
+                    <tr>
+                        <td class="p-1"></td>
+                        <td class="p-1">Standard</td>
+                        <td class="p-1">Premium</td>
+                        <td class="p-1">Business</td>
+                    </tr>
+                    <tr>
+                        <td class="p-1">Serviços</td>
+                        <td class="p-1">R$ 99,90</td>
+                        <td class="p-1">R$ 149,90</td>
+                        <td class="p-1">R$ 199,90</td>
+                    </tr>
+                    <tr>
+                        <td class="p-1">Serviço 1</td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-1">Serviço 2</td>
+                        <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-1">Serviço 3</td>
+                        <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-xmark text-danger"></i></td>
+                        <td class="p-1"><i class="fa-solid fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-1"></td>
+                        <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
+                        <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
+                        <td class="p-1"><a href="" class="text-decoration-none d-block">Comprar</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="d-lg-none">
+                <div class="card p-3">
+                    <div class="fs-3">
+                        Standard
+                    </div>
+                    <br>
+                    <div>
+                        <i class="fa-solid fa-check text-success"></i> Serviço 1
+                    </div>
+                    <div class="mt-3">
+                        <a href="" class="d-block text-decoration-none">Comprar</a>
+                    </div>
+                </div>
+                <div class="card p-3 mt-3">
+                    <div class="fs-3">
+                        Premium
+                    </div>
+                    <br>
+                    <div>
+                        <div class="d-block">
+                            <i class="fa-solid fa-check text-success"></i> Serviço 1
+                        </div>
+                        <i class="fa-solid fa-check text-success"></i> Serviço 2
+                    </div>
+                    <div class="mt-3">
+                        <a href="" class="d-block text-decoration-none">Comprar</a>
+                    </div>
+                </div>
+                <div class="card p-3 mt-3">
+                    <div class="fs-3">
+                        Business
+                    </div>
+                    <br>
+                    <div>
+                        <div class="d-block">
+                            <i class="fa-solid fa-check text-success"></i> Serviço 1
+                        </div>
+                        <div class="d-block">
+                            <i class="fa-solid fa-check text-success"></i> Serviço 2
+                        </div>
+                        <i class="fa-solid fa-check text-success"></i> Serviço 3
+                    </div>
+                    <div class="mt-3">
+                        <a href="" class="d-block text-decoration-none">Comprar</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="blog py-100">

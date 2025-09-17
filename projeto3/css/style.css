@@ -63,7 +63,7 @@ header .menu>li>ul a:hover {
 }
 
 .hero {
-    background-image: url('./img/section1-bg.jpg');
+    background-image: url('../img/section1-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -84,6 +84,7 @@ header .menu>li>ul a:hover {
     .hero form {
         margin: 0 auto;
         margin-top: 50px;
+        width: 100%;
     }
 }
 
@@ -510,4 +511,9 @@ footer .container:last-child ul>li:not(:last-child) {
 
 .lh-3 {
     line-height: 30px;
+}
+
+.pagina-servico .icone {
+    width: 35px;
+    text-align: center;
 }
