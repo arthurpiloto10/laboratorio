@@ -5,7 +5,7 @@ window
     let html = ``;
     categorias.forEach((categoria) => {
       html += `
-    <a class="btn btn-success mb-3" onclick="mostrarProdutosPorCategoria(${categoria.id})">
+    <a class="btn btn-success" onclick="mostrarProdutosPorCategoria(${categoria.id})">
     ${categoria.nome}
     </a>
     `;
