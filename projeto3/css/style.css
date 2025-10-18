@@ -536,3 +536,19 @@ footer .container:last-child ul>li:not(:last-child) {
 #botoes-categorias a {
     margin-bottom: 3px;
 }
+
+#corpo-carrinho-mobile .botoes button:first-child {
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+border-right: 1px solid var(--dark);
+}
+
+#corpo-carrinho-mobile .botoes button:nth-child(2) {
+    border-radius: 0;
+}
+
+#corpo-carrinho-mobile .botoes button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid var(--dark);
+}

@@ -27,53 +27,23 @@
     </section>
     <section>
         <div class="container mt-3">
-            <table class="table mb-3 fade-right" data-delay="0.1s">
-                <thead>
-                    <tr>
-                        <th class="text-start">Produto</th>
-                        <th class="text-center">Quantidade</th>
-                        <th class="text-center">Preço</th>
-                        <th class="text-center">Total</th>
-                        <th class="text-center"></th>
-                    </tr>
-                </thead>
-                <tbody id="corpo-carrinho">
+            <div class="d-none d-lg-block">
+                <table class="table mb-3 fade-right" data-delay="0.1s">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Produto</th>
+                            <th class="text-center">Quantidade</th>
+                            <th class="text-center">Preço</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-carrinho">
 
-                </tbody>
-            </table>
-            <div id="carrinho-mobile">
-                <div>
-                    <div class="d-flex align-items-center">
-                        <img src="./img/borrifador.webp" alt="BORRIFADOR" style="width: 75px;">
-                        <span>
-                            BORRIFADOR
-                            <br>
-                            R$ 19,90
-                        </span>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn" onclick="diminuiQuantidadeDoProdutoNoCarrinho(1)">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <button class="btn" id="quantidade-produto-mb-1">
-                            7
-                        </button>
-                        <button class="btn" onclick="aumentaQuantidadeDoProdutoNoCarrinho(1)">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        R$
-                        <span id="total-produto-mb-1">
-                            139,30
-                        </span>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-warning" onclick="removerProdutoDoCarrinho(1)">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
+            </div>
+            <div id="corpo-carrinho-mobile" class="d-lg-none mb-3">
             </div>
             <div class="fade-left" data-delay="0.2s">
                 <div class="mb-5 text-end" id="carrinho-div-checkout" style="display: none;">

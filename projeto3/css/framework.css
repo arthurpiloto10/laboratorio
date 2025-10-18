@@ -78,15 +78,16 @@ color: var(--warning);
     display: none;
 }
 
+.d-flex {
+    display: flex;
+}
+
 @media(min-width: 992px) {
     .d-lg-none {
         display: none;
     }
 }
 
-.d-flex {
-    display: flex;
-}
 
 @media(min-width: 992px) {
     .d-lg-flex {
@@ -209,6 +210,10 @@ color: var(--warning);
 .py-100 {
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.ps-2 {
+    padding-left: 20px;
 }
 
 .mt-1 {
