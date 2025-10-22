@@ -1,21 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   window
-  .fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
-  .then((resposta) => resposta.json())
-  .then((categorias) => {
-    let html = ``;
-    categorias.forEach((categoria) => {
-      html += `
+    .fetch("http://127.0.0.1:5500/projeto3/js/categorias.json")
+    .then((resposta) => resposta.json())
+    .then((categorias) => {
+      let html = ``;
+      categorias.forEach((categoria) => {
+        html += `
       <li>
       <a href="./produtos.html?categoria=${categoria.id}">${categoria.nome}</a>
       </li>
       `;
+      });
+      document.getElementById("footer-categorias").innerHTML = html;
+    })
+    .catch((erro) => {
+      console.log(erro);
     });
-    document.getElementById("footer-categorias").innerHTML = html;
-  }).catch(erro => {
-    console.log(erro);
-  })
-  ;
 });
 
 fetch("./includes/footer.html")
@@ -64,6 +64,12 @@ function atualizarContadorDeProdutosNoCarrinho() {
   let elementoContador = document.getElementById("carrinho-quantidade");
   if (elementoContador) {
     elementoContador.textContent = contadorDeProdutosNoCarrinho();
+  }
+  let elementoContadorMobile = document.getElementById(
+    "carrinho-quantidade-mb"
+  );
+  if (elementoContadorMobile) {
+    elementoContadorMobile.textContent = contadorDeProdutosNoCarrinho();
   }
 }
 
