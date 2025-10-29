@@ -16,6 +16,7 @@ const MIME = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
   ".webp": "image/webp",
+  ".json": "application/json",
 };
 
 // Lê arquivo com tratamento básico de erro
@@ -86,6 +87,9 @@ const server = http.createServer((req, res) => {
   }
   if (req.url === "/checkout") {
     return renderPage(path.join(ROOT, "pages", "checkout.html"), res);
+  }
+  if (req.url === "/sobre") {
+    return renderPage(path.join(ROOT, "pages", "sobre.html"), res);
   }
 
   // 404
