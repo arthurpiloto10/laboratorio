@@ -82,6 +82,9 @@ const server = http.createServer((req, res) => {
   if (req.url === "/" || req.url === "/home") {
     return renderPage(path.join(ROOT, "pages", "home.html"), res);
   }
+  if (req.url === "/produtos") {
+    return renderPage(path.join(ROOT, "pages", "produtos.html"), res);
+  }
   if (req.url === "/carrinho") {
     return renderPage(path.join(ROOT, "pages", "carrinho.html"), res);
   }
@@ -90,6 +93,24 @@ const server = http.createServer((req, res) => {
   }
   if (req.url === "/sobre") {
     return renderPage(path.join(ROOT, "pages", "sobre.html"), res);
+  }
+  if (req.url === "/servicos") {
+    return renderPage(path.join(ROOT, "pages", "servicos.html"), res);
+  }
+  if (req.url === "/servicos-corte-e-manutencao") {
+    return renderPage(path.join(ROOT, "pages", "servicos-corte-e-manutencao.html"), res);
+  }
+  if (req.url === "/servicos-controle-de-pragas") {
+    return renderPage(path.join(ROOT, "pages", "servicos-controle-de-pragas.html"), res);
+  }
+  if (req.url === "/servicos-adubacao-e-fertilizacao") {
+    return renderPage(path.join(ROOT, "pages", "servicos-adubacao-e-fertilizacao.html"), res);
+  }
+  if (req.url === "/contato") {
+    return renderPage(path.join(ROOT, "pages", "contato.html"), res);
+  }
+  if (req.url === "/obrigado") {
+    return renderPage(path.join(ROOT, "pages", "obrigado.html"), res);
   }
 
   // 404

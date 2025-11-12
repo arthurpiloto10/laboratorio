@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 function estaVisivel(elemento) {
   const posicao = elemento.getBoundingClientRect();
   return posicao.top <= window.innerHeight && posicao.bottom >= 0;
@@ -36,9 +35,6 @@ function aplicarAnimacoes() {
     }
   });
 }
-
-document.addEventListener("DOMContentLoaded", aplicarAnimacoes);
-window.addEventListener("scroll", aplicarAnimacoes);
 
 function contadorDeProdutosNoCarrinho() {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -60,7 +56,8 @@ function atualizarContadorDeProdutosNoCarrinho() {
   }
 }
 
-function inicializaHeader() {
+document.addEventListener("DOMContentLoaded", aplicarAnimacoes);
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("hamburguer").addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("d-none");
   });
@@ -69,8 +66,5 @@ function inicializaHeader() {
     document.getElementById("menu-categoria").classList.toggle("d-none");
   });
   atualizarContadorDeProdutosNoCarrinho();
-}
-
-
-
-
+});
+window.addEventListener("scroll", aplicarAnimacoes);

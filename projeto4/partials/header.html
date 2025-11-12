@@ -15,6 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/framework.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/script.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                     Company name
                 </h1>
                 <div class="d-flex d-lg-none column-gap-3">
-                    <a href="./carrinho.html" class="position-relative text-dark">
+                    <a href="/carrinho" class="position-relative text-dark">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="position-absolute bottom-15 bg-warning text-white px-1 rounded-1"
                             id="carrinho-quantidade-mb">
@@ -35,12 +36,12 @@
                     <i class="fa-solid fa-bars d-lg-none cursor-pointer" id="hamburguer"></i>
                 </div>
             </div>
-            <ul class="menu d-none d-lg-flex list-unstyled column-gap-3" id="menu">
-                <li class="-fade-left" data-delay="0.1s"><a href="./">Home</a></li>
+            <ul class="menu d-lg-flex list-unstyled column-gap-3 d-none" id="menu">
+                <li class="-fade-left" data-delay="0.1s"><a href="/">Home</a></li>
                 <li class="-fade-left" data-delay="0.2s"><a href="/sobre">Sobre</a></li>
-                <li class="-fade-left" data-delay="0.3s"><a href="./servicos.html">Serviços</a></li>
+                <li class="-fade-left" data-delay="0.3s"><a href="/servicos">Serviços</a></li>
                 <li class="position-relative -fade-left" data-delay="0.4s" id="sub-menu">
-                    <a href="./produtos.html">
+                    <a href="/produtos">
                         Produtos
                         <!-- <i class="fa-solid fa-angle-down"></i> -->
                     </a>
@@ -54,9 +55,9 @@
                 </li>
             </ul> -->
                 </li>
-                <li class="-fade-left" data-delay="0.5s"><a href="./contato.html">Contato</a></li>
+                <li class="-fade-left" data-delay="0.5s"><a href="/contato">Contato</a></li>
                 <li class="-fade-left d-none d-lg-inline-block" data-delay="0.6s">
-                    <a href="./carrinho.html" class="position-relative">
+                    <a href="/carrinho" class="position-relative">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="position-absolute top-15 bg-warning text-white px-1 rounded-1"
                             id="carrinho-quantidade">
