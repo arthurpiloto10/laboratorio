@@ -85,6 +85,13 @@ const server = http.createServer((req, res) => {
   if (req.url === "/produtos") {
     return renderPage(path.join(ROOT, "pages", "produtos.html"), res);
   }
+  if (req.url.startsWith("/produtos")) {
+    const partes = req.url.split("?");
+    const query = partes[1] || '';
+    const parametros = new URLSearchParams(query);
+    const categoria = parametros.get('categoria');
+    return renderPage(path.join(ROOT, "pages", "produtos.html"), res);
+  }
   if (req.url === "/carrinho") {
     return renderPage(path.join(ROOT, "pages", "carrinho.html"), res);
   }
