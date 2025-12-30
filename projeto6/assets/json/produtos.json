@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1, 
+        "imagem": "borrifador.webp",
+        "nome": "BORRIFADOR",
+        "descricao": "Descrição do item...",
+        "preco": 19.90,
+        "categoria_id": 1
+    },
+    {
+        "id": 2,
+        "imagem": "rastelo.webp",
+        "nome": "RASTELO",
+        "descricao": "Descrição do item...",
+        "preco": 15.90,
+        "categoria_id": 1
+    },
+    {
+        "id": 3,
+        "imagem": "tesoura-de-poda.webp",
+        "nome": "TESOURA DE PODA",
+        "descricao": "Descrição do item...",
+        "preco": 10.90,
+        "categoria_id": 2
+    },
+    {
+        "id": 4,
+        "imagem": "cortador-de-grama.jpg",
+        "nome": "CORTADOR DE GRAMA",
+        "descricao": "Descrição do item...",
+        "preco": 2559.99,
+        "categoria_id": 2
+    },
+    {
+        "id": 5,
+        "imagem": "cortador-de-grama.jpg",
+        "nome": "CORTADOR DE GRAMA",
+        "descricao": "Descrição do item...",
+        "preco": 2559.99,
+        "categoria_id": 2
+    },
+    {
+        "id": 6,
+        "imagem": "cortador-de-grama.jpg",
+        "nome": "CORTADOR DE GRAMA",
+        "descricao": "Descrição do item...",
+        "preco": 2559.99,
+        "categoria_id": 2
+    },
+    {
+        "id":7,
+        "imagem": "tesoura-de-poda.webp",
+        "nome": "TESOURA DE PODA",
+        "descricao": "Descrição do item...",
+        "preco": 10.90,
+        "categoria_id": 3
+    },
+    {
+        "id":8,
+        "imagem": "borrifador.webp",
+        "nome": "BORRIFADOR",
+        "descricao": "Descrição do item...",
+        "preco": 15.90,
+        "categoria_id": 4
+    }
+    
+]

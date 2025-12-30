@@ -1,0 +1,102 @@
+# =====================================
+# Node.js
+# =====================================
+
+# Dependências
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.next/cache/
+.eslintcache
+.stylelintcache
+
+# Build / produção
+dist/
+build/
+out/
+tmp/
+temp/
+
+# Diretórios temporários
+*.tmp
+*.swp
+*.swo
+
+# PM2 logs
+.pids
+*.pid
+*.seed
+
+# Binaries / compilados
+*.node
+
+# Diretórios de ferramentas
+coverage/
+.nyc_output/
+
+# dotenv / variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Editor & IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Testes
+jest-html-reporters-*/
+test-output/
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# NPM / Yarn
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Docker
+docker-data/
+docker-volume/
+*.dockerfile
+
+# Prisma (se usar)
+.prisma/
+prisma/migrations/*/steps.json
+
+# Sentry
+.sentryclirc
+
+# Firebase
+.firebase/
+functions/lib/
+functions/node_modules/
+
+# Expo / React Native (para APIs com mobile)
+.expo/
+.expo-shared/
+
+# VSCode server (WSL ou ssh)
+.vscode-server/
+
+# Next.js (caso use)
+.next/

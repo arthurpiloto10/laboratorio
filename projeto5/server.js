@@ -50,6 +50,42 @@ app.get('/produtos', (req,res) => {
   return renderPage(path.join(ROOT,'pages','produtos.html'), res);
 });
 
+app.get('/sobre', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','sobre.html'), res);
+});
+
+app.get('/servicos', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','servicos.html'), res);
+});
+
+app.get('/contato', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','contato.html'), res);
+});
+
+app.get('/carrinho', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','carrinho.html'), res);
+});
+
+app.get('/checkout', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','checkout.html'), res);
+});
+
+app.get('/obrigado', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','obrigado.html'), res);
+});
+
+app.get('/servicos-adubacao-e-fertilizacao', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','servicos-adubacao-e-fertilizacao.html'), res);
+});
+
+app.get('/servicos-controle-de-pragas', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','servicos-controle-de-pragas.html'), res);
+});
+
+app.get('/servicos-corte-e-manutencao', (req,res) => {
+  return renderPage(path.join(ROOT,'pages','servicos-corte-e-manutencao.html'), res);
+});
+
 app.use((req,res) => {
   res.status(404).type('html').send('<h1>Página não encontrada</h1>');
 });
