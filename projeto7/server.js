@@ -1,6 +1,7 @@
-require('dotenv').config();
-const sequelize = require('./database');
-const Produto = require('./models/Produto');
+require("dotenv").config();
+const sequelize = require("./database");
+const Produto = require("./models/Produto");
+const Categoria = require("./models/Categoria");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -11,76 +12,77 @@ const ROOT = __dirname;
 app.set("view engine", "ejs");
 app.set("views", path.join(ROOT, "views"));
 
-
-app.use('/assets', 
-  express.static(path.join(ROOT, 'assets'), {
-    maxAge:'1y', 
+app.use(
+  "/assets",
+  express.static(path.join(ROOT, "assets"), {
+    maxAge: "1y",
     setHeaders: (res) => {
-      res.setHeader('Cache-Control', 'public, max-age=31536000');
-    }
+      res.setHeader("Cache-Control", "public, max-age=31536000");
+    },
   })
 );
 
-app.get(['/', '/home'], (req,res) => {
+app.get(["/", "/home"], (req, res) => {
   res.render("home");
 });
 
-app.get('/produtos', async (req,res) => {
-  const categoria = req.query.categoria;
-  try {
-    const produtos = await Produto.findAll({
-      order: [['nome','ASC']]
-    });
-    res.render("produtos", {produtos});
-  } catch (erro) {
-    console.error(erro);
-    res.status(500).send('Erro ao carregar produtos');
-  }
+app.get("/produtos", async (req, res) => {
+  //const categoria = req.query.categoria;
+  const categorias = await Categoria.findAll({
+    order: [["nome", "ASC"]],
   });
+  const produtos = await Produto.findAll({
+    order: [["nome", "ASC"]],
+  });
+  res.render("produtos", { produtos, categorias });
+});
 
-app.get('/sobre', (req,res) => {
+app.get("/sobre", (req, res) => {
   res.render("sobre");
 });
 
-app.get('/servicos', (req,res) => {
+app.get("/servicos", (req, res) => {
   res.render("servicos");
 });
 
-app.get('/contato', (req,res) => {
+app.get("/contato", (req, res) => {
   res.render("contato");
 });
 
-app.get('/carrinho', (req,res) => {
-  res.render("carrinho");
+app.get("/carrinho", async (req, res) => {
+  const categorias = await Categoria.findAll({
+    order: [["nome", "ASC"]],
+  });
+  res.render("carrinho", { categorias });
 });
 
-app.get('/checkout', (req,res) => {
+app.get("/checkout", (req, res) => {
   res.render("checkout");
 });
 
-app.get('/obrigado', (req,res) => {
+app.get("/obrigado", (req, res) => {
   res.render("obrigado");
 });
 
-app.get('/servicos-adubacao-e-fertilizacao', (req,res) => {
+app.get("/servicos-adubacao-e-fertilizacao", (req, res) => {
   res.render("servicos-adubacao-e-fertilizacao");
 });
 
-app.get('/servicos-controle-de-pragas', (req,res) => {
+app.get("/servicos-controle-de-pragas", (req, res) => {
   res.render("servicos-controle-de-pragas");
 });
 
-app.get('/servicos-corte-e-manutencao', (req,res) => {
+app.get("/servicos-corte-e-manutencao", (req, res) => {
   res.render("servicos-corte-e-manutencao");
 });
 
-app.use((req,res) => {
+app.use((req, res) => {
   res.status(404).render("404");
 });
 
 const PORT = process.env.PORT;
 
-(async ()=> {
+(async () => {
   try {
     await sequelize.authenticate();
     console.log("Conectado ao MySQL com sucesso");
@@ -90,6 +92,6 @@ const PORT = process.env.PORT;
   }
 })();
 
-app.listen(PORT,() => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

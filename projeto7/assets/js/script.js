@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
   window
     .fetch("/assets/json/categorias.json")
     .then((resposta) => resposta.json())
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((erro) => {
       console.log(erro);
     });
-});
+}); */
 
 function estaVisivel(elemento) {
   const posicao = elemento.getBoundingClientRect();

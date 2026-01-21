@@ -13,8 +13,8 @@ const Produto = sequelize.define("produtos", {
   preco: {
     type: DataTypes.DECIMAL(10,2)
   },
-  categoria: {
-    type: DataTypes.STRING
+  idCategoria: {
+    type: DataTypes.INTEGER
   },
   imagem: {
     type: DataTypes.STRING

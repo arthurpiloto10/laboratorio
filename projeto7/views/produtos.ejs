@@ -27,7 +27,11 @@
                         <span>
                             R$
                             <span class="text-success">
-                                <%= produto.preco %>
+                                <!-- <%= Number(produto.preco).toFixed(2).replace('.',',') %> -->
+                                <%=  new Intl.NumberFormat('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }).format(produto.preco); %>
                             </span>
                         </span>
                         <a onclick="adicionarProdutoAoCarrinho('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.imagem %>', '<%= produto.preco %>')"

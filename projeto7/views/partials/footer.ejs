@@ -27,6 +27,11 @@
                 Produtos
             </h3>
             <ul class="list-unstyled" id="footer-categorias">
+                <% categorias.forEach(categoria=> { %>
+                    <li>
+                        <a href="/produtos?categoria=<%= categoria.idCategoria %>"><%= categoria.nome %></a>
+                    </li>
+                    <% }) %>
             </ul>
         </div>
         <div class="w-lg-25 -fade-left" data-delay="0.2s">
