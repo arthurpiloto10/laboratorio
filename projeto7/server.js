@@ -19,22 +19,45 @@ app.use(
     setHeaders: (res) => {
       res.setHeader("Cache-Control", "public, max-age=31536000");
     },
-  })
+  }),
 );
+
+// let cacheCategorias = null;
+
+// app.use(async (req, res, next) => {
+//   if (!cacheCategorias) {
+//     cacheCategorias = await Categoria.findAll({
+//       order: [["nome", "ASC"]]
+//     });
+//   }
+//   res.locals.categorias = cacheCategorias;
+//   next();
+// });
+
+
+app.use(async (req, res, next) => {
+    const categorias = await Categoria.findAll({
+      order: [["nome", "ASC"]]
+    });
+  res.locals.categorias = categorias;
+  next();
+});
 
 app.get(["/", "/home"], (req, res) => {
   res.render("home");
 });
 
 app.get("/produtos", async (req, res) => {
-  //const categoria = req.query.categoria;
-  const categorias = await Categoria.findAll({
-    order: [["nome", "ASC"]],
-  });
+  const categoria = req.query.categoria;
+  const where = {};
+  if (categoria) {
+    where.idCategoria = categoria;
+  }
   const produtos = await Produto.findAll({
-    order: [["nome", "ASC"]],
+    where,
+    order: [["nome", "ASC"]]
   });
-  res.render("produtos", { produtos, categorias });
+  res.render("produtos", { produtos });
 });
 
 app.get("/sobre", (req, res) => {
@@ -49,11 +72,8 @@ app.get("/contato", (req, res) => {
   res.render("contato");
 });
 
-app.get("/carrinho", async (req, res) => {
-  const categorias = await Categoria.findAll({
-    order: [["nome", "ASC"]],
-  });
-  res.render("carrinho", { categorias });
+app.get("/carrinho", (req, res) => {
+  res.render("carrinho");
 });
 
 app.get("/checkout", (req, res) => {
