@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function aumentaQuantidadeDoProdutoNoCarrinho(id) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  let produto = carrinho.find((produto) => produto.id === id);
+  let produto = carrinho.find((produto) => produto.id == id);
   if (produto) {
     produto.quantidade += 1;
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -80,7 +80,7 @@ function aumentaQuantidadeDoProdutoNoCarrinho(id) {
 
 function diminuiQuantidadeDoProdutoNoCarrinho(id) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  let produto = carrinho.find((produto) => produto.id === id);
+  let produto = carrinho.find((produto) => produto.id == id);
   if (produto && produto.quantidade > 1) {
     produto.quantidade -= 1;
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -93,7 +93,7 @@ function diminuiQuantidadeDoProdutoNoCarrinho(id) {
 
 function atualizaTotalDoProdutoNaLinha(id) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  let produto = carrinho.find((produto) => produto.id === id);
+  let produto = carrinho.find((produto) => produto.id == id);
   document.getElementById(`total-produto-${id}`).textContent = (
     produto.preco * produto.quantidade
   )
@@ -108,7 +108,7 @@ function atualizaTotalDoProdutoNaLinha(id) {
 
 function quantidadeDoProdutoNoCarrinho(id) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  let produto = carrinho.find((produto) => produto.id === id);
+  let produto = carrinho.find((produto) => produto.id == id);
   return produto.quantidade;
 }
 
@@ -125,7 +125,7 @@ function removerProdutoDoCarrinho(id) {
   );
   if (confimacao) {
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    carrinho = carrinho.filter((produto) => produto.id !== id);
+    carrinho = carrinho.filter((produto) => produto.id != id);
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
     //location.reload();
     let linha = document.getElementById(`linha-produto-${id}`);
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     html += `
     <div id="linha-produto-mb-${produto.id}">
                     <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center column-gap-2">
                             <img src="/assets/img/${produto.imagem}" alt="${
       produto.nome
     }" style="width: 75px;">

@@ -54,11 +54,12 @@ document
     mensagem += `*Produtos selecionados:*`;
     let total = 0;
     carrinho.forEach((produto, index) => {
-      const subtotal = produto.preco * produto.quantidade;
+      let preco = parseFloat(produto.preco);
+      const subtotal = preco * produto.quantidade;
       total += subtotal;
       mensagem += `\n${index + 1}. ${produto.nome} - ${
         produto.quantidade
-      } X R$ ${produto.preco.toFixed(2).replace(".", ",")} = R$ ${subtotal
+      } X R$ ${preco.toFixed(2).replace(".", ",")} = R$ ${subtotal
         .toFixed(2)
         .replace(".", ",")}`;
     });
