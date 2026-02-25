@@ -43,8 +43,11 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.get(["/", "/home"], (req, res) => {
-  res.render("home");
+app.get(["/", "/home"], async (req, res) => {
+  const produtos = await Produto.findAll({
+    order: [["nome", "ASC"]]
+  });
+  res.render("home", { produtos });
 });
 
 app.get("/produtos", async (req, res) => {

@@ -1,3 +1,17 @@
+:root {
+    --dark: #202020;
+    --warning: #e0450c;
+    --success: #619237;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s;
+}
+
 @media(max-width: 991px) {
     header {
         padding: 15px 0;
@@ -133,9 +147,6 @@ header .menu>li>ul a:hover {
     line-height: 22.5px;
 }
 
-.servicos a {
-    color: var(--dark);
-}
 
 @media(max-width:991px) {
     .servicos .container>div:not(:last-child) {
@@ -143,21 +154,10 @@ header .menu>li>ul a:hover {
     }
 }
 
-.servicos a>span:first-child {
-    display: inline-block;
-    padding: 2px 7.5px;
-    background-color: var(--success);
-    color: #fff;
-    margin-right: 5px;
-}
-
-.servicos a:hover>span:first-child {
-    background-color: var(--warning);
+.servicos a > span:first-child:hover{
     border-radius: 50%;
-}
-
-.servicos a>span:last-child {
-    letter-spacing: 0.5px;
+    background-color: var(--warning);
+    border-color: var(--warning);
 }
 
 .sobre {
@@ -169,12 +169,12 @@ header .menu>li>ul a:hover {
 }
 
 @media(min-width:992px) {
-    .sobre .d-lg-flex div:first-child {
+    .sobre .row div:first-child {
         padding-right: 50px;
     }
 }
 
-.sobre .d-lg-flex div .item {
+.sobre .row div .item {
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 20px 30px;
 }
