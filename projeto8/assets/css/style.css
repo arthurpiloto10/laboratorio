@@ -264,18 +264,6 @@ header .menu>li>ul a:hover {
     color: rgb(255, 255, 255, 0.5);
 }
 
-@media(min-width:992px) {
-    .numeros .container>div:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        top: 10%;
-        right: 0;
-        bottom: 10%;
-        width: 1px;
-        background-color: rgba(255, 255, 255, 0.25);
-    }
-}
-
 .marcas-atendidas .logo {
     aspect-ratio: 2/1.25;
     background-position: center center;
@@ -376,19 +364,6 @@ header .menu>li>ul a:hover {
     background-color: #fff;
 }
 
-.planos a {
-    background-color: var(--warning);
-    color: #fff;
-    padding: 12.5px;
-    border-radius: 10px;
-    border: 2px solid var(--warning);
-}
-
-.planos a:hover {
-    background-color: #fff;
-    color: var(--warning);
-}
-
 .blog h3 {
     color: var(--dark);
 }
@@ -466,20 +441,6 @@ footer .container:first-child ul>li:not(:last-child) {
 
 footer input {
     padding: 15px;
-}
-
-footer button {
-    background-color: var(--success);
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: 2px solid var(--success);
-    margin-top: 15px;
-}
-
-footer button:hover {
-    background-color: #fff;
-    color: var(--success);
 }
 
 footer .container:last-child {
