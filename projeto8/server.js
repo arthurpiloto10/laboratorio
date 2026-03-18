@@ -87,15 +87,15 @@ app.get("/obrigado", (req, res) => {
   res.render("obrigado");
 });
 
-app.get("/servicos-adubacao-e-fertilizacao", (req, res) => {
+app.get("/servicos/adubacao-e-fertilizacao", (req, res) => {
   res.render("servicos-adubacao-e-fertilizacao");
 });
 
-app.get("/servicos-controle-de-pragas", (req, res) => {
+app.get("/servicos/controle-de-pragas", (req, res) => {
   res.render("servicos-controle-de-pragas");
 });
 
-app.get("/servicos-corte-e-manutencao", (req, res) => {
+app.get("/servicos/corte-e-manutencao", (req, res) => {
   res.render("servicos-corte-e-manutencao");
 });
 
