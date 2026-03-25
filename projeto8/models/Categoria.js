@@ -9,6 +9,9 @@ const Categoria = sequelize.define("categorias", {
   },
   nome: {
     type: DataTypes.STRING
+  },
+  slug: {
+    type: DataTypes.STRING
   }
 });
 

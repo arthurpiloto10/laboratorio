@@ -2,6 +2,8 @@ require("dotenv").config();
 const sequelize = require("./database");
 const Produto = require("./models/Produto");
 const Categoria = require("./models/Categoria");
+Categoria.hasMany(Produto, {foreignKey:"idCategoria"});
+Produto.belongsTo(Categoria, {foreignKey: "idCategoria"});
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -37,7 +39,15 @@ app.use(
 
 app.use(async (req, res, next) => {
     const categorias = await Categoria.findAll({
-      order: [["nome", "ASC"]]
+      include:[
+        {
+          model: Produto,
+          attributes: [],
+          required: true
+        }
+      ],
+      order: [["nome", "ASC"]],
+      group: ["categorias.idCategoria"]
     });
   res.locals.categorias = categorias;
   next();
@@ -97,6 +107,21 @@ app.get("/servicos/controle-de-pragas", (req, res) => {
 
 app.get("/servicos/corte-e-manutencao", (req, res) => {
   res.render("servicos-corte-e-manutencao");
+});
+
+app.get("/:slug", async (req, res) => {
+  const {slug} = req.params;
+  const categoria = await Categoria.findOne({
+    where: {slug}
+  });
+  if (!categoria) {
+    return res.status(404).render('404');
+  }
+  const produtos = await Produto.findAll({
+    where: {idCategoria: categoria.idCategoria},
+    order: [["nome", "ASC"]]
+  });
+  res.render("produtos", {produtos, categoria});
 });
 
 app.use((req, res) => {

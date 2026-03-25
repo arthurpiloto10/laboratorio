@@ -30,7 +30,7 @@
                 <ul class="list-unstyled" id="footer-categorias">
                     <% categorias.forEach(categoria=> { %>
                         <li>
-                            <a href="/produtos?categoria=<%= categoria.idCategoria %>">
+                            <a href="/<%= categoria.slug %>">
                                 <%= categoria.nome %>
                             </a>
                         </li>
