@@ -109,7 +109,7 @@ app.get("/servicos/corte-e-manutencao", (req, res) => {
   res.render("servicos-corte-e-manutencao");
 });
 
-app.get("/:slug", async (req, res) => {
+app.get("/produtos/:slug", async (req, res) => {
   const {slug} = req.params;
   const categoria = await Categoria.findOne({
     where: {slug}

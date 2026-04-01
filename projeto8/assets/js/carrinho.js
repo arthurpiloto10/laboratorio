@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carrinho.forEach((produto) => {
     html += `
     <tr id="linha-produto-${produto.id}">
-                    <td class="d-flex align-items-center">
+                    <td class="d-flex align-items-center ps-0">
                         <img src="/assets/img/${produto.imagem}" alt="${
       produto.nome
     }" style="width: 75px;">
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         )}
                           </span>
                     </td>
-                    <td class="text-center">
-                        <button class="btn btn-warning" onclick="removerProdutoDoCarrinho(${
+                    <td class="text-end pe-0">
+                        <button class="btn btn-danger" onclick="removerProdutoDoCarrinho(${
                           produto.id
                         })">
                             <i class="fa-solid fa-xmark"></i>
@@ -198,8 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
-                            <div class="text-center ps-2">
-                                <button class="btn btn-warning" onclick="removerProdutoDoCarrinho(${
+                            <div class="text-end pe-0 ps-2">
+                                <button class="btn btn-danger" onclick="removerProdutoDoCarrinho(${
                                   produto.id
                                 })">
                                     <i class="fa-solid fa-xmark"></i>
