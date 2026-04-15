@@ -13,7 +13,7 @@ const ROOT = __dirname;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(ROOT, "views"));
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   "/assets",
   express.static(path.join(ROOT, "assets"), {
