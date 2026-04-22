@@ -7,22 +7,18 @@
     <section class="servicos scroll-mt py-5" id="servicos">
         <div class="container py-5">
             <div class="row">
-
+                <% servicos.forEach(servico => { %>
                 <div class="fade-left col-lg-4 mb-5 mb-lg-0" data-delay="0.1s">
                     <div class="capa shadow"
-                        style="background-image: url('/assets/img/servico-de-corte-e-manutencao.png');">
+                        style="background-image: url('/assets/img/<%= servico.imagem %>');">
                     </div>
                     <h3 class="fs-3 mt-3 fw-normal">
-                        Corte e Manutenção
+                        <%= servico.nome %>
                     </h3>
                     <p class="mb-1 mt-1">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus modi quam libero nesciunt
-                        hic!
-                        Illo recusandae minima,
-                        ut atque nesciunt odio cumque similique vero harum ea. Quam officiis
-                        similique cupiditate?
+                        <%= servico.descricao %>
                     </p>
-                    <a href="/servicos/corte-e-manutencao"
+                    <a href="/servicos/<%= servico.slug %>"
                         class="text-decoration-none d-flex align-items-center column-gap-3 mt-3">
                         <span class="btn btn-success btn-sm">
                             <i class="fa-solid fa-plus"></i>
@@ -32,53 +28,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="fade-left col-lg-4 mb-5 mb-lg-0" data-delay="0.5s">
-                    <div class="capa shadow"
-                        style="background-image: url('/assets/img/servico-de-adubacao-e-fertilizacao.webp');">
-                    </div>
-                    <h3 class="fs-3 mt-3 fw-normal">
-                        Adubação e Fertilização
-                    </h3>
-                    <p class="mb-1 mt-1">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Nisi quasi ut dolores voluptates aperiam
-                        ipsam doloremque consequuntur dignissimos sit, libero,
-                        voluptas dolor possimus assumenda vel odit
-                        aliquid cum eiu.
-                    </p>
-                    <a href="/servicos/adubacao-e-fertilizacao"
-                        class="text-decoration-none d-flex align-items-center column-gap-3 mt-3">
-                        <span class="btn btn-success btn-sm">
-                            <i class="fa-solid fa-plus"></i>
-                        </span>
-                        <span class="text-dark">
-                            Saiba mais
-                        </span>
-                    </a>
-                </div>
-                <div class="fade-left col-lg-4" data-delay="1s">
-                    <div class="capa shadow"
-                        style="background-image: url('/assets/img/servico-controle-de-pragas.jpg');"></div>
-                    <h3 class="fs-3 mt-3 fw-normal">
-                        Controle de pragas
-                    </h3>
-                    <p class="mb-1 mt-1">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Itaque perspiciatis quae dolor quaerat hic
-                        quo debitis excepturi error maiores.
-                        Provident itaque iste magni repellendus nesciunt at pariatur
-                        ullam aliquid quidem?
-                    </p>
-                    <a href="/servicos/controle-de-pragas"
-                        class="text-decoration-none d-flex align-items-center column-gap-3 mt-3">
-                        <span class="btn btn-success btn-sm">
-                            <i class="fa-solid fa-plus"></i>
-                        </span>
-                        <span class="text-dark">
-                            Saiba mais
-                        </span>
-                    </a>
-                </div>
+                <% }) %>
             </div>
         </div>
     </section>

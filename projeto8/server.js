@@ -4,6 +4,7 @@ const Produto = require("./models/Produto");
 const Categoria = require("./models/Categoria");
 Categoria.hasMany(Produto, {foreignKey:"idCategoria"});
 Produto.belongsTo(Categoria, {foreignKey: "idCategoria"});
+const Servico = require("./models/Servico");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -77,8 +78,21 @@ app.get("/sobre", (req, res) => {
   res.render("sobre");
 });
 
-app.get("/servicos", (req, res) => {
-  res.render("servicos");
+// app.get("/servicos", (req, res) => {
+//   res.render("servicos");
+// });
+
+app.get("/servicos", async (req, res) => {
+try {
+  const servicos = await Servico.findAll({
+    order: [["nome", "ASC"]],
+    raw: true
+  });
+  res.render("servicos", {servicos});
+} catch (erro) {
+  console.error(erro);
+  res.status(500).send('Erro ao carregar serviços');
+}
 });
 
 app.get("/contato", (req, res) => {
@@ -97,16 +111,28 @@ app.get("/obrigado", (req, res) => {
   res.render("obrigado");
 });
 
-app.get("/servicos/adubacao-e-fertilizacao", (req, res) => {
-  res.render("servicos-adubacao-e-fertilizacao");
-});
+// app.get("/servicos/adubacao-e-fertilizacao", (req, res) => {
+//   res.render("servicos-adubacao-e-fertilizacao");
+// });
 
-app.get("/servicos/controle-de-pragas", (req, res) => {
-  res.render("servicos-controle-de-pragas");
-});
+// app.get("/servicos/controle-de-pragas", (req, res) => {
+//   res.render("servicos-controle-de-pragas");
+// });
 
-app.get("/servicos/corte-e-manutencao", (req, res) => {
-  res.render("servicos-corte-e-manutencao");
+// app.get("/servicos/corte-e-manutencao", (req, res) => {
+//   res.render("servicos-corte-e-manutencao");
+// });
+
+app.get("/servicos/:slug", async (req, res) => {
+  const {slug} = req.params;
+  const servico = await Servico.findOne({
+    where: {slug},
+    raw: true
+  });
+  if (!servico) {
+    return res.status(404).render('404');
+  }
+  res.render('servico-detalhe', {servico});
 });
 
 app.get("/produtos/:slug", async (req, res) => {
