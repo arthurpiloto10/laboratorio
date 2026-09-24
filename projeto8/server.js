@@ -2,9 +2,10 @@ require("dotenv").config();
 const sequelize = require("./database");
 const Produto = require("./models/Produto");
 const Categoria = require("./models/Categoria");
-Categoria.hasMany(Produto, {foreignKey:"idCategoria"});
-Produto.belongsTo(Categoria, {foreignKey: "idCategoria"});
+Categoria.hasMany(Produto, { foreignKey: "idCategoria" });
+Produto.belongsTo(Categoria, { foreignKey: "idCategoria" });
 const Servico = require("./models/Servico");
+const Artigo = require('./models/Artigo');
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -14,7 +15,7 @@ const ROOT = __dirname;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(ROOT, "views"));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(
   "/assets",
   express.static(path.join(ROOT, "assets"), {
@@ -37,29 +38,34 @@ app.use(
 //   next();
 // });
 
-
 app.use(async (req, res, next) => {
-    const categorias = await Categoria.findAll({
-      include:[
-        {
-          model: Produto,
-          attributes: [],
-          required: true
-        }
-      ],
-      order: [["nome", "ASC"]],
-      group: ["categorias.idCategoria"]
-    });
+  const categorias = await Categoria.findAll({
+    include: [
+      {
+        model: Produto,
+        attributes: [],
+        required: true,
+      },
+    ],
+    order: sequelize.random(),
+    group: ["categorias.idCategoria"],
+    limit: 4,
+  });
+  const servicos = await Servico.findAll({
+    order: sequelize.random(),
+    limit: 4,
+  });
   res.locals.categorias = categorias;
+  res.locals.servicos = servicos;
   next();
 });
 
 app.get(["/", "/home"], async (req, res) => {
   const produtos = await Produto.findAll({
-    order: [["nome", "ASC"]]
+    order: [["nome", "ASC"]],
   });
   const servicos = await Servico.findAll({
-    order: [["nome", "ASC"]]
+    order: [["nome", "ASC"]],
   });
   res.render("home", { produtos, servicos });
 });
@@ -72,7 +78,7 @@ app.get("/produtos", async (req, res) => {
   }
   const produtos = await Produto.findAll({
     where,
-    order: [["nome", "ASC"]]
+    order: [["nome", "ASC"]],
   });
   res.render("produtos", { produtos });
 });
@@ -86,16 +92,16 @@ app.get("/sobre", (req, res) => {
 // });
 
 app.get("/servicos", async (req, res) => {
-try {
-  const servicos = await Servico.findAll({
-    order: [["nome", "ASC"]],
-    raw: true
-  });
-  res.render("servicos", {servicos});
-} catch (erro) {
-  console.error(erro);
-  res.status(500).send('Erro ao carregar serviços');
-}
+  try {
+    const servicos = await Servico.findAll({
+      order: [["nome", "ASC"]],
+      raw: true,
+    });
+    res.render("servicos", { servicos });
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).send("Erro ao carregar serviços");
+  }
 });
 
 app.get("/contato", (req, res) => {
@@ -127,30 +133,30 @@ app.get("/obrigado", (req, res) => {
 // });
 
 app.get("/servicos/:slug", async (req, res) => {
-  const {slug} = req.params;
+  const { slug } = req.params;
   const servico = await Servico.findOne({
-    where: {slug},
-    raw: true
+    where: { slug },
+    raw: true,
   });
   if (!servico) {
-    return res.status(404).render('404');
+    return res.status(404).render("404");
   }
-  res.render('servico-detalhe', {servico});
+  res.render("servico-detalhe", { servico });
 });
 
 app.get("/produtos/:slug", async (req, res) => {
-  const {slug} = req.params;
+  const { slug } = req.params;
   const categoria = await Categoria.findOne({
-    where: {slug}
+    where: { slug },
   });
   if (!categoria) {
-    return res.status(404).render('404');
+    return res.status(404).render("404");
   }
   const produtos = await Produto.findAll({
-    where: {idCategoria: categoria.idCategoria},
-    order: [["nome", "ASC"]]
+    where: { idCategoria: categoria.idCategoria },
+    order: [["nome", "ASC"]],
   });
-  res.render("produtos", {produtos, categoria});
+  res.render("produtos", { produtos, categoria });
 });
 
 app.use((req, res) => {
