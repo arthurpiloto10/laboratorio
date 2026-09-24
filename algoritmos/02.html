@@ -1,0 +1,40 @@
+<script>
+    // calcular media
+    // let nota1 = 10;
+    // let nota2 = 8;
+    // let nota3 = 7;
+    // let nota4 = 10;
+    // let soma = nota1 + nota2 + nota3 + nota4;
+    // let media = soma / 4;
+    // console.log(media);
+    // let nota1 = window.prompt('Digite o valor da nota 1');
+    // nota1 = parseFloat(nota1);
+    // let nota2 = window.prompt('Digite o valor da nota 2');
+    // nota2 = parseFloat(nota2);
+    // let nota3 = window.prompt('Digite o valor da nota 3');
+    // nota3 = parseFloat(nota3);
+    // let nota4 = window.prompt('Digite o valor da nota 4');
+    // nota4 = parseFloat(nota4);
+    // let soma = nota1 + nota2 + nota3 + nota4;
+    // let media = soma / 4;
+    // console.log(media);
+    function calcularMedia() {
+        let nota1 = window.prompt('Digite o valor da nota 1');
+        nota1 = parseFloat(nota1);
+        let nota2 = window.prompt('Digite o valor da nota 2');
+        nota2 = parseFloat(nota2);
+        let nota3 = window.prompt('Digite o valor da nota 3');
+        nota3 = parseFloat(nota3);
+        let nota4 = window.prompt('Digite o valor da nota 4');
+        nota4 = parseFloat(nota4);
+        let soma = nota1 + nota2 + nota3 + nota4;
+        let media = soma / 4;
+        // console.log(media);
+        // window.alert(`A media das notas é ${media}`);
+        // document.write(`A media das notas é ${media}`);
+        document.body.innerHTML = `A media das notas é ${media}`
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        calcularMedia();
+    });
+</script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="conteudo"></div>
+    <h2>Historico de notas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Nota 1</td>
+                <td>Nota 2</td>
+                <td>Nota 3</td>
+                <td>Nota 4</td>
+                <td>Media</td>
+            </tr>
+        </thead>
+        <tbody id="tabela-corpo">
+
+        </tbody>
+    </table>
+    <script>
+        async function buscaAlunoDaApi(alunoId) {
+            let alunos = await window.fetch('http://127.0.0.1:5500/algoritmos/alunos.json').then((resposta) => resposta.json());
+            let aluno = alunos.find((aluno) => aluno.id === alunoId);
+            return aluno;
+        }
+
+        async function salvaNotaDoAluno(alunoId, notas) {
+            let aluno = await buscaAlunoDaApi(alunoId);
+            aluno.notas = notas;
+            let alunos = JSON.parse(localStorage.getItem('alunos')) || [];
+            let alunoExistente = alunos.find((aluno) => aluno.id === alunoId);
+            if (alunoExistente) {
+                alunoExistente.notas = notas;
+            } else {
+                alunos.push(aluno);
+            }
+            localStorage.setItem('alunos', JSON.stringify(alunos));
+        }
+
+        function calcularMediaAluno(alunoId) {
+            let nota1 = parseFloat(document.getElementById(`aluno${alunoId}nota1`).value);
+            nota1 = parseFloat(nota1);
+            let nota2 = parseFloat(document.getElementById(`aluno${alunoId}nota2`).value);
+            nota2 = parseFloat(nota2);
+            let nota3 = parseFloat(document.getElementById(`aluno${alunoId}nota3`).value);
+            nota3 = parseFloat(nota3);
+            let nota4 = parseFloat(document.getElementById(`aluno${alunoId}nota4`).value);
+            nota4 = parseFloat(nota4);
+            let soma = nota1 + nota2 + nota3 + nota4;
+            let media = soma / 4;
+            document.getElementById(`aluno${alunoId}media`).textContent = media;
+            salvaNotaDoAluno(alunoId, [nota1, nota2, nota3, nota4]);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            let alunos = JSON.parse(localStorage.getItem('alunos'));
+        });
+        let alunos = [];
+        async function carregaAlunos() {
+            alunos = await window.fetch('http://127.0.0.1:5500/algoritmos/alunos.json').then((resposta) => resposta.json());
+            alunos.forEach((aluno) => {
+                const titulo = document.createElement('h2');
+                titulo.textContent = aluno.nome;
+                const inputNota1 = document.createElement('input');
+                inputNota1.setAttribute('id', `aluno${aluno.id}nota1`);
+                inputNota1.setAttribute('placeholder', 'Valor da nota 1');
+                const inputNota2 = document.createElement('input');
+                inputNota2.setAttribute('id', `aluno${aluno.id}nota2`);
+                inputNota2.setAttribute('placeholder', 'Valor da nota 2');
+                const inputNota3 = document.createElement('input');
+                inputNota3.setAttribute('id', `aluno${aluno.id}nota3`);
+                inputNota3.setAttribute('placeholder', 'Valor da nota 3');
+                const inputNota4 = document.createElement('input');
+                inputNota4.setAttribute('id', `aluno${aluno.id}nota4`);
+                inputNota4.setAttribute('placeholder', 'Valor da nota 4');
+                const botao = document.createElement('button');
+                botao.setAttribute('onclick', `calcularMediaAluno(${aluno.id})`);
+                botao.textContent = `Calcular media aluno ${aluno.id}`;
+                const div = document.createElement('div');
+                div.setAttribute('id', `aluno${aluno.id}media`);
+                document.getElementById('conteudo').appendChild(titulo);
+                document.getElementById('conteudo').appendChild(inputNota1);
+                document.getElementById('conteudo').appendChild(inputNota2);
+                document.getElementById('conteudo').appendChild(inputNota3);
+                document.getElementById('conteudo').appendChild(inputNota4);
+                document.getElementById('conteudo').appendChild(botao);
+                document.getElementById('conteudo').appendChild(div);
+            });
+        }
+        carregaAlunos();
+    </script>
+</body>
+
+</html>

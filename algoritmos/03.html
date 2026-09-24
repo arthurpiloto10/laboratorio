@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="conteudo"></div>
+    <script>
+        let alunos = [
+            {
+                id: 1,
+                nome: 'Arthur'
+            },
+            {
+                id: 2,
+                nome: 'Dheison'
+            },
+            {
+                id: 3,
+                nome:'Jhon Doe'
+            }
+        ];
+        let html = '';
+        alunos.forEach((aluno) => {
+            html += `
+            <h1>${aluno.nome}</h1>
+    <input type="text" id="aluno${aluno.id}nota1" placeholder="Valor da nota 1">
+    <input type="text" id="aluno${aluno.id}nota2" placeholder="Valor da nota 2">
+    <input type="text" id="aluno${aluno.id}nota3" placeholder="Valor da nota 3">
+    <input type="text" id="aluno${aluno.id}nota4" placeholder="Valor da nota 4">
+    <button onclick="calcularMediaAluno(${aluno.id})">calcular Media Aluno ${aluno.id}</button>
+    <div id="aluno${aluno.id}media">
+    </div>
+            `;
+        });
+        document.getElementById('conteudo').innerHTML = html;
+        function calcularMediaAluno(alunoId) {
+            let nota1 = parseFloat(document.getElementById(`aluno${alunoId}nota1`).value);
+            nota1 = parseFloat(nota1);
+            let nota2 = parseFloat(document.getElementById(`aluno${alunoId}nota2`).value);
+            nota2 = parseFloat(nota2);
+            let nota3 = parseFloat(document.getElementById(`aluno${alunoId}nota3`).value);
+            nota3 = parseFloat(nota3);
+            let nota4 = parseFloat(document.getElementById(`aluno${alunoId}nota4`).value);
+            nota4 = parseFloat(nota4);
+            let soma = nota1 + nota2 + nota3 + nota4;
+            let media = soma / 4;
+            document.getElementById(`aluno${alunoId}media`).textContent = media;
+        }
+    </script>
+</body>
+
+</html>
