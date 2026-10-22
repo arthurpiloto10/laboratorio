@@ -363,42 +363,18 @@
                 Blog
             </h2>
             <div class="row">
+                <% artigos.forEach((artigo) => { %>
                 <div class="fade-left col-lg-4">
-                    <div class="capa shadow" style="background-image: url('/assets/img/noticia1.webp');"></div>
+                    <div class="capa shadow" style="background-image: url('/assets/img/<%= artigo.imagem %>');"></div>
                     <h3 class="mb-1 fs-3 fw-normal mt-3">
-                        Lorem Ipsum
+                        <%= artigo.titulo %>
                     </h3>
                     <p class="mb-1">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
-                        possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
-                        perferendis corporis est?
+                        <%= artigo.resumo %>
                     </p>
-                    <a href="" class="text-decoration-none">Leia mais</a>
+                    <a href="/blog/<%= artigo.slug %>" class="text-decoration-none">Leia mais</a>
                 </div>
-                <div class="fade-left col-lg-4" data-delay="0.1s">
-                    <div class="capa shadow" style="background-image: url('/assets/img/noticia2.webp');"></div>
-                    <h3 class="mb-1 fs-3 fw-normal mt-3">
-                        Lorem Ipsum
-                    </h3>
-                    <p class="mb-1">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
-                        possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
-                        perferendis corporis est?
-                    </p>
-                    <a href="" class="text-decoration-none">Leia mais</a>
-                </div>
-                <div class="fade-left col-lg-4" data-delay="0.2s">
-                    <div class="capa shadow" style="background-image: url('/assets/img/noticia3.webp');"></div>
-                    <h3 class="mb-1 fs-3 fw-normal mt-3">
-                        Lorem Ipsum
-                    </h3>
-                    <p class="mb-1">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellat nostrum eveniet cumque illum
-                        possimus pariatur? Nobis maxime, nulla accusamus mollitia a voluptas sed quos quasi minima
-                        perferendis corporis est?
-                    </p>
-                    <a href="" class="text-decoration-none">Leia mais</a>
-                </div>
+                <% }) %>
             </div>
         </div>
     </section>
