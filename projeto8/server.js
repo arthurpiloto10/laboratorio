@@ -6,6 +6,8 @@ Categoria.hasMany(Produto, { foreignKey: "idCategoria" });
 Produto.belongsTo(Categoria, { foreignKey: "idCategoria" });
 const Servico = require("./models/Servico");
 const Artigo = require('./models/Artigo');
+const Numero = require('./models/Numero');
+const Marca = require('./models/Marca');
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -71,7 +73,15 @@ app.get(["/", "/home"], async (req, res) => {
     order: [["idArtigo", "DESC"]],
     limit: 3
   });
-  res.render("home", { produtos, servicos, artigos });
+  const numeros = await Numero.findAll({
+    order: [["idNumero", "ASC"]],
+    limit: 4
+  });
+  const marcas = await Marca.findAll({
+    order: [["idMarca", "ASC"]],
+    limit: 8
+  });
+  res.render("home", { produtos, servicos, artigos, numeros, marcas });
 });
 
 app.get("/produtos", async (req, res) => {
@@ -105,6 +115,19 @@ app.get("/servicos", async (req, res) => {
   } catch (erro) {
     console.error(erro);
     res.status(500).send("Erro ao carregar serviços");
+  }
+});
+
+app.get("/blog", async (req, res) => {
+  try {
+    const artigos = await Artigo.findAll({
+      order: [["idArtigo", "DESC"]],
+      raw: true,
+    });
+    res.render("blog", { artigos });
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).send("Erro ao carregar artigos");
   }
 });
 
@@ -161,6 +184,18 @@ app.get("/produtos/:slug", async (req, res) => {
     order: [["nome", "ASC"]],
   });
   res.render("produtos", { produtos, categoria });
+});
+
+app.get("/blog/:slug", async (req, res) => {
+  const { slug } = req.params;
+  const artigo = await Artigo.findOne({
+    where: { slug },
+    raw: true,
+  });
+  if (!artigo) {
+    return res.status(404).render("404");
+  }
+  res.render("artigo-detalhe", { artigo });
 });
 
 app.use((req, res) => {

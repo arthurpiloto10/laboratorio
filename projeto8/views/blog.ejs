@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+<section class="header-pagina-interna">
+        <div class="container">
+            <h2>Blog</h2>
+        </div>
+    </section>
+    <section class="blog py-5">
+        <div class="container py-5">
+            <div class="row">
+                <% artigos.forEach((artigo) => { %>
+                <div class="fade-left col-lg-4">
+                    <div class="capa shadow" style="background-image: url('/assets/img/<%= artigo.imagem %>'); cursor: pointer;" onclick="window.location.href='/blog/<%= artigo.slug %>'"></div>
+                    <h3 class="mb-1 fs-3 fw-normal mt-3">
+                        <%= artigo.titulo %>
+                    </h3>
+                    <p class="mb-1">
+                        <%= artigo.resumo %>
+                    </p>
+                    <a href="/blog/<%= artigo.slug %>" class="text-decoration-none">Leia mais</a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+    <%- include("partials/footer") %>

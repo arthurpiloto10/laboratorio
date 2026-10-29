@@ -38,7 +38,7 @@
                 <% servicos.forEach(servico => { %>
                 <div class="fade-left col-lg-4 mb-5 mb-lg-0" data-delay="0.1s">
                     <div class="capa shadow"
-                        style="background-image: url('/assets/img/<%= servico.imagem %>');">
+                        style="background-image: url('/assets/img/<%= servico.imagem %>'); cursor: pointer;" onclick="window.location.href='/servicos/<%= servico.slug %>'">
                     </div>
                     <h3 class="fs-3 mt-3 fw-normal">
                         <%= servico.nome %>
@@ -153,42 +153,17 @@
     </section>
     <section class="numeros text-center bg-danger text-white py-5">
         <div class="container py-5 d-lg-flex justify-content-center column-gap-5">
+            <% numeros.forEach(numero=> {%>
             <div class="fade-left">
-                <i class="fa-solid fa-calendar-days fs-1"></i>
+                <i class="<%= numero.icone %> fs-1"></i>
                 <h3 class="mt-3 fs-3">
-                    20
+                    <%= numero.valor %>
                 </h3>
                 <p class="mt-1">
-                    Anos de experiência
+                    <%= numero.descricao %>
                 </p>
             </div>
-            <div class="fade-left" data-delay="0.1s">
-                <i class="fa-solid fa-user-group fs-1"></i>
-                <h3 class="fs-3 mt-3">
-                    350+
-                </h3>
-                <p class="mt-1">
-                    Clientes atendidos
-                </p>
-            </div>
-            <div class="fade-left" data-delay="0.2s">
-                <i class="fa-solid fa-list-check fs-1"></i>
-                <h3 class="fs-3 mt-3">
-                    1200+
-                </h3>
-                <p class="mt-1">
-                    Projetos desenvolvidos
-                </p>
-            </div>
-            <div class="fade-left" data-delay="0.3s">
-                <i class="fa-regular fa-clock fs-1"></i>
-                <h3 class="fs-3 mt-3">
-                    35000
-                </h3>
-                <p class="mt-1">
-                    Horas de dedicação
-                </p>
-            </div>
+            <% }) %>
         </div>
     </section>
     <section class="marcas-atendidas py-5">
@@ -199,26 +174,12 @@
         </div>
         <div class="container">
             <div class="d-flex flex-wrap">
+                <% marcas.forEach ((marca, index)=> { %>
                 <div class="logo w-25 position-relative fade-down"
-                    style="background-image: url('/assets/img/cliente1.png');">
+                    style="background-image: url('/assets/img/<%= marca.imagem %>');">
                 </div>
-                <div class="logo w-25 position-relative fade-down" data-delay="0.1s"
-                    style="background-image: url('/assets/img/cliente2.png');"></div>
-                <div class="logo w-25 position-relative fade-down" data-delay="0.2s"
-                    style="background-image: url('/assets/img/cliente3.png');"></div>
-                <div class="logo w-25 position-relative fade-down" data-delay="0.3s"
-                    style="background-image: url('/assets/img/cliente4.png');"></div>
-            </div>
-            <div class="d-flex flex-wrap">
-                <div class="logo w-25 position-relative fade-up"
-                    style="background-image: url('/assets/img/cliente5.png');">
-                </div>
-                <div class="logo w-25 position-relative fade-up" data-delay="0.1s"
-                    style="background-image: url('/assets/img/cliente6.png');"></div>
-                <div class="logo w-25 position-relative fade-up" data-delay="0.2s"
-                    style="background-image: url('/assets/img/cliente7.png');"></div>
-                <div class="logo w-25 position-relative fade-up" data-delay="0.3s"
-                    style="background-image: url('/assets/img/cliente8.png');"></div>
+                <%- (index +1) % 4 === 0 ? '</div><div class="d-flex flex-wrap">' : '' %>
+                <% }) %>
             </div>
         </div>
     </section>
@@ -365,7 +326,7 @@
             <div class="row">
                 <% artigos.forEach((artigo) => { %>
                 <div class="fade-left col-lg-4">
-                    <div class="capa shadow" style="background-image: url('/assets/img/<%= artigo.imagem %>');"></div>
+                    <div class="capa shadow" style="background-image: url('/assets/img/<%= artigo.imagem %>'); cursor: pointer;" onclick="window.location.href='/blog/<%= artigo.slug %>'"></div>
                     <h3 class="mb-1 fs-3 fw-normal mt-3">
                         <%= artigo.titulo %>
                     </h3>

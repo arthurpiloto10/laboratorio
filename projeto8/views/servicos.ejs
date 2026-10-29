@@ -10,7 +10,7 @@
                 <% servicos.forEach(servico => { %>
                 <div class="fade-left col-lg-4 mb-5 mb-lg-0" data-delay="0.1s">
                     <div class="capa shadow"
-                        style="background-image: url('/assets/img/<%= servico.imagem %>');">
+                        style="background-image: url('/assets/img/<%= servico.imagem %>'); cursor: pointer;" onclick="window.location.href='/servicos/<%= servico.slug %>'">
                     </div>
                     <h3 class="fs-3 mt-3 fw-normal">
                         <%= servico.nome %>
