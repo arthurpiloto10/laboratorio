@@ -210,22 +210,10 @@
                 Galeria
             </h2>
             <div class="d-lg-flex flex-wrap">
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" style="background-image: url('/assets/img/galeria1.jfif');">
+               <% cases.forEach( (item) => { %> 
+                <div class="imagem w-25 ratio ratio-4x3 fade-left" style="background-image: url('/assets/img/<%= item.imagem %>');">
                 </div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.1s"
-                style="background-image: url('/assets/img/galeria2.jfif');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.2s"
-                style="background-image: url('/assets/img/galeria3.jfif');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.3s"
-                style="background-image: url('/assets/img/galeria4.jfif');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.4s"
-                style="background-image: url('/assets/img/galeria5.jpg');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.5s"
-                style="background-image: url('/assets/img/galeria6.jfif');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.6s"
-                style="background-image: url('/assets/img/galeria7.jpg');"></div>
-                <div class="imagem w-25 ratio ratio-4x3 fade-left" data-delay="0.7s"
-                style="background-image: url('/assets/img/galeria8.jpg');"></div>
+                <% }) %>
             </div>
         </div>
     </section>
@@ -341,26 +329,14 @@
     </section>
     <section class="dados text-center scroll-mt py-5" id="contato">
         <div class="container d-lg-flex column-gap-3 justify-content-around py-5">
+            <% dados.forEach( dado => { %>
             <div class="fade-left">
-                <i class="fa-solid fa-location-dot mb-1 fs-1"></i>
+                <i class="<%= dado.icone %> mb-1 fs-1"></i>
                 <span class="text-white d-block fs-5 mt-3">
-                    Rua Paraiso 123, Centro
-                    <br>
-                    Sales - SP
+                    <%= dado.descricao %>
                 </span>
             </div>
-            <div class="fade-left" data-delay="0.1s">
-                <i class="fa-solid fa-envelope mb-1 fs-1"></i>
-                <span class="text-white d-block fs-5 mt-3">
-                    contato@dominioxpto.com.br
-                </span>
-            </div>
-            <div class="fade-left" data-delay="0.2s">
-                <i class="fa-solid fa-phone mb-1 fs-1"></i>
-                <span class="text-white d-block fs-5 mt-3">
-                    0800 - 123 - 4567
-                </span>
-            </div>
+            <% }) %>
         </div>
     </section>
     <!--<section class="contato scroll-mt position-relative">

@@ -8,6 +8,8 @@ const Servico = require("./models/Servico");
 const Artigo = require('./models/Artigo');
 const Numero = require('./models/Numero');
 const Marca = require('./models/Marca');
+const Case = require('./models/Case');
+const Contato = require('./models/Contato');
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -81,7 +83,15 @@ app.get(["/", "/home"], async (req, res) => {
     order: [["idMarca", "ASC"]],
     limit: 8
   });
-  res.render("home", { produtos, servicos, artigos, numeros, marcas });
+  const cases = await Case.findAll({
+    order: [["idCase", "DESC"]],
+    limit: 8
+  })
+  const dados = await Contato.findAll({
+    order: [["idContato", "ASC"]],
+    limit: 3
+  })
+  res.render("home", { produtos, servicos, artigos, numeros, marcas, cases, dados });
 });
 
 app.get("/produtos", async (req, res) => {
