@@ -12,6 +12,14 @@ const Case = require('./models/Case');
 const Contato = require('./models/Contato');
 const Plano = require('./models/Plano');
 const PlanoServico = require('./models/PlanoServico');
+Plano.hasMany(PlanoServico, {
+  foreignKey: 'idPlano', 
+  as: 'servicos'
+});
+PlanoServico.belongsTo(Plano, {
+  foreignKey: 'idPlano',
+  as: 'plano'
+});
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -94,14 +102,18 @@ app.get(["/", "/home"], async (req, res) => {
     limit: 3
   })
   const planos = await Plano.findAll({
-    order: [["idPlano", "ASC"]],
-    limit: 3
-  })
-  const planosServicos = await PlanoServico.findAll({
-    order: [["idPlanoServico", "ASC"]],
-    limit: 3 
-  })
-  res.render("home", { produtos, servicos, artigos, numeros, marcas, cases, dados, planos, planosServicos });
+    include: [
+      {
+        model: PlanoServico,
+        as: 'servicos'
+      }
+    ],
+    order: [
+      ['idPlano', 'ASC'],
+      [{ model: PlanoServico, as: 'servicos'}, 'idPlanoServico', 'ASC']
+    ]
+  });
+  res.render("home", { produtos, servicos, artigos, numeros, marcas, cases, dados, planos });
 });
 
 app.get("/produtos", async (req, res) => {
