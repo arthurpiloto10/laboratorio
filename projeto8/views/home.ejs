@@ -224,15 +224,15 @@
                 <table class="w-100 fade-left">
                     <tr>
                         <td class="p-1"></td>
-                        <td class="p-1">Standard</td>
-                        <td class="p-1">Premium</td>
-                        <td class="p-1">Business</td>
+                        <% planos.forEach(plano => { %>
+                        <td class="p-1"><%= plano.nome %></td>
+                        <% }) %>
                     </tr>
                     <tr>
                         <td class="p-1">Serviços</td>
-                        <td class="p-1">R$ 99,90</td>
-                        <td class="p-1">R$ 149,90</td>
-                        <td class="p-1">R$ 199,90</td>
+                        <% planos.forEach(plano => { %>
+                        <td class="p-1">R$ <%= plano.valor.replace('.', ',') %></td>
+                            <% }) %>
                     </tr>
                     <tr>
                         <td class="p-1">Serviço 1</td>
