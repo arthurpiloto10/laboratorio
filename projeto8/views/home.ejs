@@ -1,15 +1,12 @@
 <%- include("partials/header") %>
-    <section class="hero scroll-mt py-5" id="home">
+    <section class="hero scroll-mt py-5" id="home" style="background-image: url('/assets/img/<%= hero.imagem %>');">
         <div class="container d-lg-flex justify-content-between align-items-center py-5">
             <div class="text-center text-lg-start fade-left">
-                <h2 class="text-white fs-1">
-                    Serviço completo para
-                    <span class="text-uppercase d-block">
-                        residências e comércios
-                    </span>
+                <h2 class="text-white fs-1" style="white-space: pre-line;">
+                    <%= hero.titulo %>
                 </h2>
                 <h3 class="text-white fs-2">
-                    Jardinagem e manutenção
+                    <%= hero.subtitulo %>
                 </h3>
             </div>
             <form action="" class="text-center bg-danger p-5 fade-right">
@@ -65,22 +62,12 @@
             <h2 class="text-white text-center mb-3 fade-down display-4 text-uppercase">
                 Sobre
             </h2>
-            <p class="text-center fade-down" data-delay="0.1s">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloremque non voluptas minima hic explicabo
-                impedit maiores nostrum nulla,
-                itaque aliquam, architecto iusto adipisci cumque et deserunt labore
-                reprehenderit a sit.
-            </p>
-            <p class="text-center fade-down" data-delay="0.2s">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat omnis, hic aliquam molestias
-                consequuntur ad rem,
-                voluptatum dolore repellendus rerum ipsum velit quasi fugiat cumque repudiandae?
-                Laudantium praesentium officiis saepe.
+            <p class="text-center fade-down" data-delay="0.1s" style="white-space: pre-line;">
+                <%= sobre.texto %>
             </p>
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6 mb-3 mb-lg-0">
-                    <img src="/assets/img/empresa.jpg" alt="Empresa" class="img-fluid fade-left">
+                    <img src="/assets/img/<%= sobre.imagem %>" alt="Empresa" class="img-fluid fade-left">
                 </div>
                 <div class="col-lg-6">
                     <div class="item fade-left" data-delay="0.1s">
@@ -88,9 +75,7 @@
                             Missão
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis illo facere illum
-                            repellendus,
-                            corrupti obcaecati.
+                            <%= sobre.missao %>
                         </p>
                     </div>
                     <div class="item fade-left" data-delay="0.2s">
@@ -98,9 +83,7 @@
                             Visão
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis illo facere illum
-                            repellendus,
-                            corrupti obcaecati.
+                            <%= sobre.visao %>
                         </p>
                     </div>
                     <div class="item fade-left" data-delay="0.3s">
@@ -108,9 +91,7 @@
                             Valores
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis illo facere illum
-                            repellendus,
-                            corrupti obcaecati.
+                            <%= sobre.valores %>
                         </p>
                     </div>
                 </div>

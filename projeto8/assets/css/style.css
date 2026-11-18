@@ -76,7 +76,6 @@ header .menu>li>ul a:hover {
 }
 
 .hero {
-    background-image: url('../img/section1-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

@@ -1,10 +1,12 @@
 require("dotenv").config();
 const sequelize = require("./database");
+const Hero = require("./models/Hero");
 const Produto = require("./models/Produto");
 const Categoria = require("./models/Categoria");
 Categoria.hasMany(Produto, { foreignKey: "idCategoria" });
 Produto.belongsTo(Categoria, { foreignKey: "idCategoria" });
 const Servico = require("./models/Servico");
+const Sobre = require("./models/Sobre");
 const Artigo = require('./models/Artigo');
 const Numero = require('./models/Numero');
 const Marca = require('./models/Marca');
@@ -75,11 +77,17 @@ app.use(async (req, res, next) => {
 });
 
 app.get(["/", "/home"], async (req, res) => {
+  const hero = await Hero.findOne({
+    raw: true,
+  });
   const produtos = await Produto.findAll({
     order: [["nome", "ASC"]],
   });
   const servicos = await Servico.findAll({
     order: [["nome", "ASC"]],
+  });
+  const sobre = await Sobre.findOne({
+    raw: true,
   });
   const artigos = await Artigo.findAll({
     order: [["idArtigo", "DESC"]],
@@ -113,7 +121,7 @@ app.get(["/", "/home"], async (req, res) => {
       [{ model: PlanoServico, as: 'servicos'}, 'idPlanoServico', 'ASC']
     ]
   });
-  res.render("home", { produtos, servicos, artigos, numeros, marcas, cases, dados, planos });
+  res.render("home", { hero, produtos, servicos, sobre, artigos, numeros, marcas, cases, dados, planos });
 });
 
 app.get("/produtos", async (req, res) => {
